@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Neblux - La manera más inteligente de usar el Transporte Público">
+    <meta name="author" content="Neblux">
+    <meta name="robots" content="index,follow">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Neblux - La manera más inteligente de usar el Transporte Público">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#db5945">
+    <title><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titlePage')->TxtDescription; ?></title>
+
+    <!-- Facebook -->
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url"
+          content="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/' . $this->page->PagUrl); ?>">
+    <meta property="og:title" content="<?PHP echo $this->page->PagName; ?>">
+    <meta property="og:site_name" content="<?PHP echo $this->translator->pageTitle; ?>">
+    <meta property="og:description" content="<?PHP echo $this->page->PagDescription; ?>">
+    <meta property="og:image"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->page->PagImage; ?>">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="80">
+    <meta property="og:image:height" content="80">
+    <meta property="og:type" content="website">
+
+    <!-- Fav and Touch Icons -->
+    <meta name="msapplication-TileColor" content="#d9534f">
+    <meta name="msapplication-TileImage"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-config"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public//favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png"
+          sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/android-192x192.png"
+          sizes="192x192">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-96x96.png"
+          sizes="96x96">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png"
+          sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="shortcut icon"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+          type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+
+    <?PHP
+    Com_Helper_Style::getInstance()->addFile("Public/bootstrap.css")
+        ->addFile("Public/bolpegas.css")
+        ->addFile("Public/font-awesome.min.css")
+        ->addFile("Public/sequence-theme.basic.min.css")
+        ->addFile("Public/jquery.flexisel.css")
+        ->addFile("Public/slick.css")
+        ->addFile("Public/sweetalert.css")
+        ->addFile("Public/slick-theme.css");
+    //echo Com_Helper_Style::getInstance();
+    ?>
+</head>
+<body >
+
+<!--FOOTER-->
+ <?PHP Pages_Widget_Footer::getInstance()->render();?>
+</body>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="http://localhost/neblux/Resources/Script/Public/jquery.min.js"><\/script>')
+</script>
+<!-- Google Map -->
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script>
+<?php
+Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
+    ->addFile("Public/bootstrap.min.js")
+    ->addFile("Public/jquery.easing.min.js")
+    ->addFile("Public/imagesloaded.pkgd.min.js")
+    ->addFile("Public/hammer.min.js")
+    ->addFile("Public/sequence.min.js")
+    ->addFile("Public/sweetalert.min.js")
+    ->addFile("Public/sequence-theme.basic.min.js")
+    ->addFile("Public/jquery.flexisel.js")
+    ->addFile("Public/slick.min.js")
+    ->addFile("Public/bolpegas.js");
+
+
+//echo Com_Helper_Script::getInstance();
+?>
+<script>
+
+</html>

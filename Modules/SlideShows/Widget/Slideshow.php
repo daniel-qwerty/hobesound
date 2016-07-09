@@ -1,0 +1,57 @@
+<?php
+
+class SlideShows_Widget_Slideshow extends Com_Object {
+
+    private $lan;
+    
+
+    /**
+     *
+     * @return SlideShows_Widget_Slideshow 
+     */
+    public static function getInstance() {
+        return self::_getInstance(__CLASS__);
+    }
+
+    public function setLan($lan) {
+        $this->lan = $lan;
+        return $this;
+    }
+
+    public function render() {
+
+        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
+        $count = 0;
+        foreach ($list as $slide) {
+            $count++;
+            ?>
+                <li class="header-step seq-step<?php echo $count;?>" id="step<?php echo $count;?>"
+                    style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>) center center / cover">
+
+                        <div class="header-desc col-md-4">
+                                <h2><?PHP echo $slide->SliTitle;?></h2>
+                                <p><?PHP echo $slide->SliDescription;?></p>
+                        </div>
+
+                </li>
+           
+            <?PHP
+        }
+    }
+    public function renderPag() {
+        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
+        $count = 0;
+        ?>
+        
+            <?PHP
+            foreach ($list as $slide) {
+                $count++;
+                ?>
+                    <li><a href="#step<?php echo $count;?>" rel="step<?php echo $count;?>" title="Go to slide <?php echo $count;?>"><?PHP echo $slide->SliTitle;?></a></li>
+                <?PHP
+            }
+            ?>
+       
+        <?PHP
+    }
+}
