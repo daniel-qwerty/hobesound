@@ -132,26 +132,13 @@
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
-                            <li class="header-step seq-step1" id="step1"
-                                style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(img/intro-bg.jpg) center center / cover">
-                            </li>
-                            <li class="header-step seq-step2" id="step2"
-                                style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(img/intro-bg.jpg) center center / cover">
-                            </li>
-                            <li class="header-step seq-step3" id="step3"
-                                style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(img/intro-bg.jpg) center center / cover">
-                            </li>
-                            <li class="header-step seq-step4" id="step4"
-                                style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(img/intro-bg.jpg) center center / cover">
-                            </li>
+                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+                            
                         </ul>
                     </div>
 
                     <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
-                        <li><a href="#step1" rel="step1" title="Go to slide 1">step1</a></li>
-                        <li><a href="#step2" rel="step2" title="Go to slide 2">step1</a></li>
-                        <li><a href="#step3" rel="step3" title="Go to slide 3">step1</a></li>
-                        <li><a href="#step4" rel="step4" title="Go to slide 4">step1</a></li>
+                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->renderPag(); ?>
                     </ul>
                 </div>
             </div>
@@ -163,25 +150,13 @@
 <section id="about" class="container content-section">
     <div class="row item-noticias active bg-white" rel="1">
         <div class="col-lg-12 text-center">
-            <h2 class="color-2">About Us</h2>
+            <h2 class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleAboutUs')->TxtDescription; ?></h2>
         </div>
 
         <div class="col-lg-6 p-content">
-            <h4 class="color-2 text-left">Title of section</h4>
+            
 
-            <p>
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum
-            </p>
+            <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAboutUs')->TxtDescription; ?></p>
         </div>
 
         <div class="col-lg-6 p-image">

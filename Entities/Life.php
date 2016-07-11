@@ -13,5 +13,6 @@ class Entities_Life extends Com_Database_Entity_Language{
     public $CerImage;
     public $CerLink;
     public $CerStatus;
+    public $CerCategory;
 
 }

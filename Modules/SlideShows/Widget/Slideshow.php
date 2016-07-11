@@ -28,11 +28,6 @@ class SlideShows_Widget_Slideshow extends Com_Object {
                 <li class="header-step seq-step<?php echo $count;?>" id="step<?php echo $count;?>"
                     style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>) center center / cover">
 
-                        <div class="header-desc col-md-4">
-                                <h2><?PHP echo $slide->SliTitle;?></h2>
-                                <p><?PHP echo $slide->SliDescription;?></p>
-                        </div>
-
                 </li>
            
             <?PHP

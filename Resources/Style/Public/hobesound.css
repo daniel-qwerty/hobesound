@@ -353,7 +353,7 @@ ul {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    background: url(../../Image/Public/downloads-bg.jpg) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -427,7 +427,7 @@ ul.banner-social-buttons {
 }
 
 #sports {
-    background: url(../img/sport-bg.jpg);
+    background: url(../../Image/Public/sport-bg.jpg);
     background-repeat: repeat-x;
 }
 
