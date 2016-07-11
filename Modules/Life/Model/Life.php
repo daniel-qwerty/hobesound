@@ -24,6 +24,7 @@ class Life_Model_Life extends Com_Module_Model {
             $db->CerImage = $image;
             $db->CerStatus = $obj->Status;
             $db->CerLink = $obj->Link;
+            $db->CerCategory = $obj->Category;
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -41,6 +42,7 @@ class Life_Model_Life extends Com_Module_Model {
         $db->CerDescription = $obj->Description;
         $db->CerStatus = $obj->Status;
         $db->CerLink = $obj->Link;
+        $db->CerCategory = $obj->Category;
         if ($image != "") {
             $db->CerImage = $image;
         }

@@ -4,13 +4,23 @@ $form = new Com_Wizard_Form();
 $form->title = "Formulario Certificaciones";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Certifications");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Life");
 
 $form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
 
 $control = new Com_Wizard_Form_Control_Hidden();
 $control->name = "Language";
 $control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Category";
+$control->label = "Cateogry";
+$control->default = $this->Category;
+$control->required = true;
+$control->addItem('Shopping', 'Shopping');
+$control->addItem('Beach', 'Beach');
+$control->addItem('Restaurants', 'Restaurants');
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control();

@@ -6,7 +6,7 @@ $grid->title = "Life Style List";
 $grid->setIdField("CerId");
 $grid->setLanField("CerLanId");
 $grid->setQuery($db->getListWithLanguages());
-$grid->setAlias(array("LanName" => "Idioma", "CerName" => "Nombre", "CerStatus" => "Estado"));
+$grid->setAlias(array("LanName" => "Idioma", "CerName" => "Nombre", "CerCategory" => "Category", "CerStatus" => "Estado"));
 $grid->setFilters(array("CerName" => get('CerName')));
 
 $toolBar = new Com_Wizard_ToolBar();

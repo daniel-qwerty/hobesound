@@ -32,6 +32,7 @@ class Life_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image');
         $this->assign('Status');
         $this->assign('Link');
+        $this->assign('Category');
         $this->assign("languages", $languages);
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
     }
@@ -66,6 +67,7 @@ class Life_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image', $entity->CerImage);
         $this->assign('Status', $entity->CerStatus);
         $this->assign('Link', $entity->CerLink);
+        $this->assign('Category', $entity->CerCategory);
         $this->assign("languages", $languages);
     }
 
