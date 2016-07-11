@@ -1,10 +1,10 @@
 <?php
 
-class Sports_Controller_Index extends Public_Controller_Index {
+class Gallery2_Controller_Index extends Public_Controller_Index {
 
     public function Index() {
-        $this->setLayout("sports");
-        $this->setView("sport");
+        $this->setLayout("real");
+        $this->setView("realstate");
         $url = get('REQUEST_URI');
         $url = explode("/", $url);
         $url = $url[count($url) - 1];
