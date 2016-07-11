@@ -364,7 +364,6 @@ ul {
 #map {
     width: 100%;
     height: 200px;
-    margin-top: 100px;
 }
 
 @media (min-width: 767px) {
@@ -378,7 +377,6 @@ ul {
 
     #map {
         height: 400px;
-        margin-top: 250px;
     }
 }
 
@@ -455,22 +453,24 @@ ul.banner-social-buttons {
     padding: 15px 0;
 }
 
-#news .news-items{
+#news .news-items {
     padding: 15px 0;
     background: white;
     margin-bottom: 15px;
 }
+
 #news .news-items h2 {
     margin: 0;
     padding: 0;
     font-size: 20px;
 }
-#news .news-items a{
+
+#news .news-items a {
     display: block;
     height: 100%;
 }
 
-#news .news-item{
+#news .news-item {
     padding: 0 15px;
     border-right: solid 1px #888888;
 }
@@ -496,12 +496,108 @@ div.hsp-item {
 
 }
 
+#life-style{
+    margin-top: 0;
+}
+#life-style h2{
+    color: #555;
+    margin: 15px 0;
+}
+#life-style .fs-scroll li {
+    position: relative;
+}
+
+#life-style .fs-scroll li a {
+    color: #555555;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+}
+
+#life-style .ls-shopping .fs-scroll a:hover {
+    color: #ca2f3c !important;
+    font-size: 24px !important;
+}
+#life-style .ls-beach .fs-scroll a:hover {
+    color: #ffe261 !important;
+    font-size: 24px !important;
+}
+#life-style .ls-restaurant .fs-scroll a:hover {
+    color: #99e4cd !important;
+    font-size: 24px !important;
+}
+
+#life-style .ls-header {
+    position: relative;
+}
+
+#life-style .ls-shopping .ls-header h2 {
+    color: #ca2f3c;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+#life-style .ls-beach .ls-header h2 {
+    color: #ffe261;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+#life-style .ls-restaurant .ls-header h2 {
+    color: #99e4cd;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+#life-style .ls-header h2 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -15px;
+    font-size: 36px;
+}
+#location{
+    margin-top: 0;
+
+}
+#location h2{
+    margin: 0;
+    padding: 15px 0;
+
+}
+#contact{
+    margin-top: 0;
+    border: solid 2px #004216;
+}
+#contact h2{
+    margin: 0;
+    padding: 15px 0;
+}
+#contact form {
+    padding: 15px 0;
+}
+
+#contact form .form-control {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #004216;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
 footer {
     padding: 50px 0;
 }
 
 footer p {
     margin: 0;
+    text-align: center;
 }
 
 ::-moz-selection {
