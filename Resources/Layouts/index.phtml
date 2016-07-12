@@ -133,13 +133,13 @@
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
-                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("Home")->render(); ?>
 
                         </ul>
                     </div>
 
                     <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
-                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->renderPag(); ?>
+                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("Home")->renderPag(); ?>
                     </ul>
                 </div>
             </div>
