@@ -432,7 +432,7 @@ ul.banner-social-buttons {
 }
 
 #real-state .p-content {
-    height: 250px;
+    height: 350px;
     margin-bottom: 15px;
     overflow-x: auto;
     padding: 40px;
@@ -446,6 +446,10 @@ ul.banner-social-buttons {
     height: 350px;
     overflow-x: auto;
     padding: 40px;
+}
+
+#news {
+    margin-top: 0;
 }
 
 #news h2 {
@@ -496,13 +500,15 @@ div.hsp-item {
 
 }
 
-#life-style{
+#life-style {
     margin-top: 0;
 }
-#life-style h2{
+
+#life-style h2 {
     color: #555;
     margin: 15px 0;
 }
+
 #life-style .fs-scroll li {
     position: relative;
 }
@@ -518,10 +524,12 @@ div.hsp-item {
     color: #ca2f3c !important;
     font-size: 24px !important;
 }
+
 #life-style .ls-beach .fs-scroll a:hover {
     color: #ffe261 !important;
     font-size: 24px !important;
 }
+
 #life-style .ls-restaurant .fs-scroll a:hover {
     color: #99e4cd !important;
     font-size: 24px !important;
@@ -553,23 +561,28 @@ div.hsp-item {
     margin-top: -15px;
     font-size: 36px;
 }
-#location{
+
+#location {
     margin-top: 0;
 
 }
-#location h2{
+
+#location h2 {
     margin: 0;
     padding: 15px 0;
 
 }
-#contact{
+
+#contact {
     margin-top: 0;
     border: solid 2px #004216;
 }
-#contact h2{
+
+#contact h2 {
     margin: 0;
     padding: 15px 0;
 }
+
 #contact form {
     padding: 15px 0;
 }
@@ -590,6 +603,40 @@ div.hsp-item {
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#club {
+    margin-top: 0;
+}
+
+#club .p-content {
+    height: 350px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    padding: 40px;
+}
+
+#tournaments {
+    margin-top: 0;
+}
+
+#tournaments {
+    background: url(../../Image/Public/sport-bg.jpg);
+    background-repeat: repeat-x;
+}
+
+#gallery {
+    margin-top: 0;
+    background: #000000;
+}
+
+#gallery .col-xs-6, #gallery .col-sm-4, #gallery .col-md-3, #gallery .col-lg-2 {
+    padding: 0;
+}
+#gallery img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
 }
 footer {
     padding: 50px 0;

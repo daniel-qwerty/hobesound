@@ -88,6 +88,8 @@
         ->addFile("Public/font-awesome.min.css")
         ->addFile("Public/sequence-theme.basic.min.css")
         ->addFile("Public/jquery.flexisel.css")
+        ->addFile("Public/sweetalert.css")
+        ->addFile("Public/lightbox.css")
         ->addFile("Public/slick.css")
         ->addFile("Public/slick-theme.css");
     echo Com_Helper_Style::getInstance();
@@ -133,7 +135,7 @@
                     <div class="seq-screen">
                         <ul class="seq-canvas">
                             <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
-                            
+
                         </ul>
                     </div>
 
@@ -145,72 +147,51 @@
         </div>
     </div>
 </header>
+<section id="club" class=" content-section bg-color-10">
+    <div class="container-fluid">
+        <div class="container">
+            <h2 class="text-red text-center color-5">Club</h2>
 
-
-<section id="about" class="container content-section">
-    <div class="row item-noticias active bg-white" rel="1">
-        <div class="col-lg-12 text-center">
-            <?PHP
-            $this->getContent();
-            ?>
-            <h2 class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleAboutUs')->TxtDescription; ?></h2>
-        </div>
-
-        <div class="col-lg-6 p-content">
-            
-
-            <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAboutUs')->TxtDescription; ?></p>
-        </div>
-
-        <div class="col-lg-6 p-image">
-            <img class="img-responsive" src="img/about-us.jpg" alt="">
-        </div>
-
-        <div class="col-md-12 col-actions text-center">
-            <a class="btn btn-hobesound-green" href="#">View more</a>
+            <div class="row bg-white">
+                <div class="col-lg-6 p-content visible-lg hidden-xs"
+                     style="background: url(<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/about-us.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+                </div>
+                <div class="col-lg-6 p-content bg-color-5">
+                    <div class="servicio-header">
+                        <h3 class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleRealState')->TxtDescription; ?></h3>
+                    </div>
+                    <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
+                </div>
+            </div>
+            <div class="col-md-12 col-actions text-center">
+                <a class="btn btn-hobesound-green bg-color-2"
+                   href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "realstate") . "/"; ?>"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtViewMore')->TxtDescription; ?></a>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="sports" class="content-section">
+<section id="tournaments" class="content-section">
     <div class="container-fluid">
         <div class="row">
-            <h2 class="text-red text-center color-5">Sports</h2>
+            <h2 class="text-red text-center color-5">Tournaments</h2>
 
             <div class="col-sm-10 col-md-offset-1">
                 <ul id="sports-scroll">
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
-                    <li><img class="img-responsive" src="img/sports.jpg"></li>
+                    <?PHP Sports_Widget_Gallery::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<section id="real-state" class=" content-section bg-color-10">
-    <div class="container-fluid">
-        <div class="container">
-            <h2 class="text-red text-center color-5">Real State</h2>
+<section id="news" class="container-fluid content-section bg-color-2">
+    <div class="row">
+        <h2 class="bg-color-7 color-5 text-center"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleNews')->TxtDescription; ?></h2>
 
-            <div class="row bg-white">
-                <div class="col-lg-6 p-content visible-lg hidden-xs"
-                     style="background: url(img/sports.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-                </div>
-                <div class="col-lg-6 p-content bg-color-5">
-                    <div class="servicio-header">
-                        <h3 class="color-2">Titulo</h3>
-                    </div>
-                    <p>lorem ipsum dolor sir amed lorem ipsum dolor sir amed lorem ipsum dolor sir amed lorem ipsum
-                        dolor sir amed lorem ipsum dolor sir amed lorem ipsum dolor sir amed lorem ipsum dolor sir
-                        amed lorem ipsum dolor sir amed lorem ipsum dolor sir amed </p>
-                </div>
-            </div>
-            <div class="col-md-12 col-actions text-center">
-                <a class="btn btn-hobesound-green bg-color-2" href="#">View more</a>
+        <div class="container">
+            <div class="news-items">
+                <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
             </div>
         </div>
     </div>
@@ -219,179 +200,214 @@
 <section id="home-sound-preserv" class="container-fluid content-section bg-color-6">
     <div class="container">
         <div class="row bg-white">
-            <h2 class="text-red text-center color-2">Sports</h2>
+            <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titlePreserv')->TxtDescription; ?></h2>
 
             <div class="hsp-items bg-color-5">
-                <div>
-                    <div class="col-lg-6 p-content">
-                        <div class="servicio-header">
-
-                            <h2>titulo</h2>
-                        </div>
-                        <p>descripcion</p>
-                    </div>
-                    <div class="col-lg-6 p-content visible-lg hidden-xs"
-                         style="background: url(img/sports.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-                    </div>
-                </div>
-                <div>
-                    <div class="col-lg-6 p-content">
-                        <div class="servicio-header">
-
-                            <h2>titulo</h2>
-                        </div>
-                        <p>descripcion</p>
-                    </div>
-                    <div class="col-lg-6 p-content visible-lg hidden-xs"
-                         style="background: url(img/sports.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-                    </div>
-                </div>
-                <div>
-                    <div class="col-lg-6 p-content">
-                        <div class="servicio-header">
-                            <h2>titulo</h2>
-                        </div>
-                        <p>descripcion</p>
-                    </div>
-                    <div class="col-lg-6 p-content visible-lg hidden-xs"
-                         style="background: url(img/sports.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-                    </div>
-                </div>
+                <?PHP Preserv_Widget_Gallery::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
             </div>
         </div>
     </div>
 </section>
 
-<section id="news" class="container-fluid content-section bg-color-2">
+
+<section id="gallery" class="container-fluid content-section text-center">
+    <h2 class="text-red text-center color-5">Gallery</h2>
+
     <div class="row">
-        <h2 class="bg-color-7 color-5 text-center">News</h2>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg"
+               data-lightbox="gallery">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-1.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg"
+               data-lightbox="gallery">
+
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/gallery-2.jpg" alt=""/>
+            </a>
+        </div>
+
+
+    </div>
+</section>
+
+<section id="location" class="container-fluid content-section text-center">
+    <div class="row">
+        <h2 class="bg-color-3 color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtLocation')->TxtDescription; ?></h2>
+
+        <div id="map"></div>
+    </div>
+</section>
+
+<section id="contact" class="container-fluid content-section text-center">
+    <div class="row">
+        <h2 class="bg-color-1 color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtContact')->TxtDescription; ?></h2>
 
         <div class="container">
-            <div class="news-items">
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
 
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
 
-                        <p class="p-content">Descripcion</p>
-                    </a>
+                    <p style="font-size: 18px;"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAddress')->TxtDescription; ?></p>
+                    <ul class="list-unstyled">
+                        <li style="font-size: 18px;"><i
+                                class="fa fa-phone fa-fw"></i> <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtPhone')->TxtDescription; ?>
+                        </li>
+                        <li style="font-size: 18px;"><i class="fa fa-envelope-o fa-fw"></i> <a
+                                href="mailto:<?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtEmail')->TxtDescription; ?>"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtEmail')->TxtDescription; ?></a>
+                        </li>
+                    </ul>
+
                 </div>
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
+                <div class="col-md-4 col-md-offset-2">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="Name" class="form-control" id="contacto-nombre" name="contacto-nombre"
+                                   placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="Email" class="form-control" id="contacto-email" name="contacto-emial"
+                                   placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="contacto-mensaje" name="contacto-mensaje"
+                                      placeholder="Message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group text-right">
 
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
-
-                        <p class="p-content">Descripcion</p>
-                    </a>
+                            <input type="button" class="btn btn-hobesound-green"
+                                   value="<?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtContactEnviar')->TxtDescription; ?>"
+                                   onclick="saveContact('error message', 'enviado',<?PHP echo $this->lan->LanId; ?>);">
+                        </div>
+                    </form>
                 </div>
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
-
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
-
-                        <p class="p-content">Descripcion</p>
-                    </a>
-                </div>
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
-
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
-
-                        <p class="p-content">Descripcion</p>
-                    </a>
-                </div>
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
-
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
-
-                        <p class="p-content">Descripcion</p>
-                    </a>
-                </div>
-                <div class="news-item bg-color-5">
-                    <a href="#" class="bg-color-6">
-                        <img src="img/sports.jpg" alt=""/>
-
-                        <h2 class="color-2">Titulo</h2>
-                        <span class="color-8">Subtitulo</span>
-
-                        <p class="p-content">Descripcion</p>
-                    </a>
-                </div>
-
             </div>
         </div>
     </div>
 </section>
-
-<section id="download" class="content-section text-center">
-    <div class="download-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Download Grayscale</h2>
-
-                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit
-                    Download Page</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h2>Contact Start Bootstrap</h2>
-
-            <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates
-                and themes, or to just say hello!</p>
-
-            <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-            </p>
-            <ul class="list-inline banner-social-buttons">
-                <li>
-                    <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i
-                            class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                </li>
-                <li>
-                    <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i
-                            class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                </li>
-                <li>
-                    <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i
-                            class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<div id="map"></div>
 
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; Your Website 2014</p>
+        <p><a target="_blank" href="http://qwerty.com.bo/es/page/index.html?ref=hobesound"><img height="40"
+                                                                                                src="http://localhost/bolpegas-web/Resources/Image/Public/logo-qwerty.png"
+                                                                                                alt=""></a></p>
+
+        <p>Copyright © QWERTY 2016</p>
     </div>
 </footer>
 
 
-</body>
-
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-    window.jQuery || document.write('<script src="http://localhost/neblux/Resources/Script/Public/jquery.min.js"><\/script>')
-</script>
+
 <!-- Google Map -->
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script>
@@ -401,15 +417,15 @@ Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
     ->addFile("Public/jquery.easing.min.js")
     ->addFile("Public/imagesloaded.pkgd.min.js")
     ->addFile("Public/sequence.min.js")
- 
     ->addFile("Public/sequence-theme.basic.min.js")
     ->addFile("Public/jquery.flexisel.js")
     ->addFile("Public/slick.min.js")
+    ->addFile("Public/lightbox.min.js")
+    ->addFile("Public/sweetalert.min.js")
     ->addFile("Public/hobesound.js");
 
 
 echo Com_Helper_Script::getInstance();
 ?>
-<script>
-
+</body>
 </html>
