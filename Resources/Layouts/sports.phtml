@@ -81,7 +81,8 @@
           type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <?PHP
     Com_Helper_Style::getInstance()->addFile("Public/bootstrap.css")
         ->addFile("Public/hobesound.css")
@@ -90,6 +91,7 @@
         ->addFile("Public/jquery.flexisel.css")
         ->addFile("Public/sweetalert.css")
         ->addFile("Public/lightbox.css")
+        ->addFile("Public/clndr.css")
         ->addFile("Public/slick.css")
         ->addFile("Public/slick-theme.css");
     echo Com_Helper_Style::getInstance();
@@ -209,14 +211,17 @@
 
         <div class="row bg-white">
             <div class="col-lg-6 p-content bg-color-5">
-                <h3 class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleRealState')->TxtDescription; ?></h3>
 
-                <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
+                <h3 id="event-title"
+                    class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleRealState')->TxtDescription; ?></h3>
 
-                <a class="btn-hobesound-green btn" href="#">more info</a>
+                <p id="event-description"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
+
+                <a id="event-url" class="btn-hobesound-green btn" href="#">more info</a>
+
             </div>
-            <div class="col-lg-6 p-content"
-                >
+            <div class="col-lg-6 p-content">
+                <div id="calendar-ui" class="cal1"></div>
             </div>
         </div>
     </div>
@@ -472,12 +477,73 @@ Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
     ->addFile("Public/sequence-theme.basic.min.js")
     ->addFile("Public/jquery.flexisel.js")
     ->addFile("Public/slick.min.js")
+    ->addFile("Public/clndr.js")
     ->addFile("Public/lightbox.min.js")
     ->addFile("Public/sweetalert.min.js")
     ->addFile("Public/hobesound.js");
 
 
 echo Com_Helper_Script::getInstance();
+
 ?>
+
+<script>
+    $(document).ready(function () {
+
+        var thisMonth = moment().format('YYYY-MM');
+        var eventArray = [
+            {
+                title: 'Multi-Day Event',
+                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
+                date: thisMonth + '-14',
+                url: "http://neblux.com"
+            }, {
+                date: thisMonth + '-23',
+                title: 'Another Multi-Day Event',
+                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
+                url: "http://neblux.com"
+            }, {
+                date: thisMonth + '-27',
+                title: 'Single Day Event',
+                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
+                url: "http://neblux.com"
+            }
+        ];
+
+        var clndr1 = $('.cal1').clndr({
+            events: eventArray,
+            clickEvents: {
+                click: function (target) {
+                    //console.log('Cal-1 clicked: ', target);
+                    console.log(target.events[0])
+                    $("#event-title").html(target.events[0].title);
+                    $("#event-description").html(target.events[0].description);
+                    $("#event-url").attr("href",target.events[0].url);
+
+                },
+                today: function () {
+                    console.log('Cal-1 today');
+                },
+                nextMonth: function () {
+                    console.log('Cal-1 next month');
+                },
+                previousMonth: function () {
+                    console.log('Cal-1 previous month');
+                },
+                onMonthChange: function () {
+                    console.log('Cal-1 month changed');
+                }
+            },
+            multiDayEvents: {
+                singleDay: 'date',
+                endDate: 'endDate',
+                startDate: 'startDate'
+            },
+            showAdjacentMonths: true,
+            adjacentDaysChangeMonth: false
+        });
+    });
+</script>
 </body>
+
 </html>
