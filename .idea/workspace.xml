@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d749dc2d-5c8b-4389-8b04-0b18c326d117" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Style/Public/bootstrap.css" afterPath="$PROJECT_DIR$/Resources/Style/Public/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Style/Public/hobesound.css" afterPath="$PROJECT_DIR$/Resources/Style/Public/hobesound.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Script/Public/hobesound.js" afterPath="$PROJECT_DIR$/Resources/Script/Public/hobesound.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Layouts/index.phtml" afterPath="$PROJECT_DIR$/Resources/Layouts/index.phtml" />
-    </list>
+    <list default="true" id="d749dc2d-5c8b-4389-8b04-0b18c326d117" name="Default" comment="" />
     <ignored path="hobesound-web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -30,13 +25,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/Layouts/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.653846" vertical-offset="8020" max-vertical-offset="9129">
-              <caret line="485" column="57" selection-start-line="485" selection-start-column="57" selection-end-line="485" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.42372882" vertical-offset="7595" max-vertical-offset="8704">
+              <caret line="460" column="57" selection-start-line="460" selection-start-column="57" selection-end-line="460" selection-end-column="57" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hobesound.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hobesound.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/Style/Public/hobesound.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43542436" vertical-offset="9386" max-vertical-offset="10727">
+            <state vertical-scroll-proportion="-8.428572" vertical-offset="9386" max-vertical-offset="10727">
               <caret line="566" column="19" selection-start-line="566" selection-start-column="19" selection-end-line="566" selection-end-column="19" />
               <folding />
             </state>
@@ -392,24 +386,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/Style/Public/hobesound.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.428572" vertical-offset="9386" max-vertical-offset="10727">
+          <caret line="566" column="19" selection-start-line="566" selection-start-column="19" selection-end-line="566" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Layouts/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.653846" vertical-offset="8020" max-vertical-offset="9129">
-          <caret line="485" column="57" selection-start-line="485" selection-start-column="57" selection-end-line="485" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.42372882" vertical-offset="7595" max-vertical-offset="8704">
+          <caret line="460" column="57" selection-start-line="460" selection-start-column="57" selection-end-line="460" selection-end-column="57" />
           <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Style/Public/hobesound.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43542436" vertical-offset="9386" max-vertical-offset="10727">
-          <caret line="566" column="19" selection-start-line="566" selection-start-column="19" selection-end-line="566" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
