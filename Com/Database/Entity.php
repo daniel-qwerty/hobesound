@@ -178,8 +178,13 @@ class Com_Database_Entity extends Com_Object {
         $lstFields =  implode(",", $lstFields);
         $sqlQuery = "INSERT INTO {$this->tableName} ({$lstFields}) values
                                             ('{$values}')";
+<<<<<<< HEAD
                                             
         
+=======
+        //print_r($sqlQuery);
+        //exit();
+>>>>>>> 470fc851d6b1528b9383b5c9561634e12996467f
         $result = false;
         Com_Database_Connection::getInstance()->execute($sqlQuery);
         $keyField = $this->keyField;
