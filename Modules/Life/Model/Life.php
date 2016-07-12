@@ -73,9 +73,9 @@ class Life_Model_Life extends Com_Module_Model {
         return $text->getAll($text->getList());
     }
     
-    public function getListCert($lanId) {
+    public function getLista($lanId, $category) {
         $db = new Entities_Life();
-        return $db->getAll($db->getList()->where("CerLanId={$lanId}"));
+        return $db->getAll($db->getList()->where("CerLanId={$lanId} and CerCategory = '{$category}' "));
     }
 
 }

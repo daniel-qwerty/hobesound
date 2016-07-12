@@ -15,19 +15,22 @@ class Sports_Model_Sport extends Com_Module_Model {
         $db = new Entities_Sport();
 
         $id = $db->getNextId();
-
+        
+        
         foreach ($languages as $language) {
             $db->SpoId = $id;
             $db->SpoLanId = $language->LanId;
             $db->SpoTitle = $obj->Title;
-            $db->SpoDescription = $obj->Description;
+            $db->SpoDescription = str_replace("'", "\\'",$obj->Description)  ;
             $db->SpoImage = $image;
             $db->SpoBanner = $banner;
             $db->SpoStatus = $obj->Status;
             $db->action = ACTION_INSERT;
-            $db->save();
+            
+            
+           $db->save();
         }
-
+        
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Insertado");
 
         return $id;
@@ -76,9 +79,9 @@ class Sports_Model_Sport extends Com_Module_Model {
         return $db;
     }
     
-    public function getList($lanId) {
+    public function getList($lanId, $limit) {
         $text = new Entities_Sport();
-        return $text->getAll($text->getList()->where("SpoLanId={$lanId} ")->andWhere("SpoStatus=1"));
+        return $text->getAll($text->getList()->where("SpoLanId={$lanId} ")->andWhere("SpoStatus=1")->limit(0, $limit));
     }
     
     public function getListSport() {

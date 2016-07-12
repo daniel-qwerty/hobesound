@@ -66,9 +66,9 @@ class Preserv_Model_Preserv extends Com_Module_Model {
         return $db;
     }
 
-    public function getList() {
+    public function getList($lanId, $limit) {
         $text = new Entities_Preserv();
-        return $text->getAll($text->getList());
+        return $text->getAll($text->getList()->where("CerLanId={$lanId} ")->andWhere("CerStatus=1")->limit(0, $limit));
     }
     
     public function getListCert($lanId) {

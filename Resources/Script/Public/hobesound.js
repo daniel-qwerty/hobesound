@@ -3,7 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+var urlBase = "http://localhost/hobesound";
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
     if ($(".navbar").offset().top > 50) {
@@ -44,7 +44,7 @@ var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
-    map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
+    map.setCenter(new google.maps.LatLng(27.0501182, -80.1565656));
 });
 
 function init() {
@@ -52,15 +52,15 @@ function init() {
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 15,
+        zoom: 13,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(27.0501182, -80.1565656), // New York
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
         scrollwheel: false,
-        draggable: false,
+        draggable: true
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
@@ -75,13 +75,33 @@ function init() {
     map = new google.maps.Map(mapElement, mapOptions);
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
+    var image = 'http://localhost/hobesound/Resources/Image/Public/map-marker.png';
+    var myLatLng = new google.maps.LatLng(27.049818, -80.215005);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
         icon: image
     });
+    
+    var image2 = 'http://localhost/hobesound/Resources/Image/Public/airport.png';
+    var myLatLng2 = new google.maps.LatLng(26.6857475,-80.0928165);
+    var beachMarker2 = new google.maps.Marker({
+        position: myLatLng2,
+        map: map,
+        icon: image2
+    });
+    
+    var image3 = 'http://localhost/hobesound/Resources/Image/Public/airport.png';
+    var myLatLng3 = new google.maps.LatLng(27.1681279,-80.4673226);
+    var beachMarker3 = new google.maps.Marker({
+        position: myLatLng3,
+        map: map,
+        icon: image3
+    });
+    
+    
+    
+    
 }
 
 function initSports()
@@ -181,4 +201,41 @@ function initNews() {
             }
         ]
     });
+}
+
+function validarEmail(email) {
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!expr.test(email)) {
+        swal("Error", "La dirección de correo '" + email + "' es incorrecta", "error");
+        return false;
+    } else
+        return true;
+}
+
+function saveContact(errorMesage, Message, lanId) {
+
+    var nombre = $('#contacto-nombre').val();
+    var email = $('#contacto-email').val();
+    var mensaje = $('#contacto-mensaje').val();
+
+    if (nombre === "" || email === "" || mensaje === "") {
+        swal("Alerta!!", "Todos los campos marcados son obligatorios", "warning");
+    } else {
+
+        if (validarEmail(email)) {
+            swal("Exito", "Ya resivimso su mensaje, en breve le responderemos", "success");
+            $.ajax({
+                type: "POST",
+                url: urlBase + "/Service/Contact/Save",
+                data: {Name: nombre, Email: email, Message: mensaje, Language: lanId, Status: 0}
+            });
+            $('#contacto-nombre').val("");
+            $('#contacto-email').val("");
+            $('#contacto-mensaje').val("");
+        } else {
+            alert('mal email');
+        }
+
+
+    }
 }

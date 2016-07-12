@@ -148,7 +148,7 @@ class Com_Database_Entity extends Com_Object {
             $lstFields = implode(" AND ", $lstFields);
             $lstFields = (strlen($lstFields) > 0 ? " WHERE " . $lstFields : "");
             $sqlQuery = "SELECT * FROM {$this->strTableName} {$lstFields}";
-        
+            
             
         }
         $lstResult = array();
@@ -159,7 +159,7 @@ class Com_Database_Entity extends Com_Object {
             }
         }
         
-        
+       
         return $lstResult;
     }
 
@@ -175,12 +175,11 @@ class Com_Database_Entity extends Com_Object {
         foreach ($lstFields as $index => $value) {
             $lstFields[$index] = $index;
         }
-        $lstFields = implode(",", $lstFields);
+        $lstFields =  implode(",", $lstFields);
         $sqlQuery = "INSERT INTO {$this->tableName} ({$lstFields}) values
                                             ('{$values}')";
                                             
-        //print_r($sqlQuery);
-        //exit();
+        
         $result = false;
         Com_Database_Connection::getInstance()->execute($sqlQuery);
         $keyField = $this->keyField;

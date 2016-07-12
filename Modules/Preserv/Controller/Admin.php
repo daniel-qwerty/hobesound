@@ -4,8 +4,8 @@ class Preserv_Controller_Admin extends Admin_Controller_Admin {
 
     public function init() {
         parent::init();
-        Com_Helper_Title::getInstance()->title = "M&oacute;dulo Life Style";
-        Com_Helper_BreadCrumbs::getInstance()->add("Life Style", "/Admin/Preserv");
+        Com_Helper_Title::getInstance()->title = "M&oacute;dulo Preserv";
+        Com_Helper_BreadCrumbs::getInstance()->add("Preserv", "/Admin/Preserv");
     }
 
     public function Add() {
@@ -70,7 +70,7 @@ class Preserv_Controller_Admin extends Admin_Controller_Admin {
     }
 
     public function Delete() {
-        Life_Model_Life::getInstance()->doDelete(get('id'));
+        Preserv_Model_Preserv::getInstance()->doDelete(get('id'));
         $this->redirect(Com_Helper_Url::getInstance()->urlBase . '/Admin/Preserv');
     }
 
