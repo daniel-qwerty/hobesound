@@ -3,10 +3,13 @@
 class SlideShows_Widget_Slideshow extends Com_Object {
 
     private $lan;
+    private $cat;
     
 
-    /**
+   /**
      *
+     * @static
+     * @access public
      * @return SlideShows_Widget_Slideshow 
      */
     public static function getInstance() {
@@ -17,10 +20,15 @@ class SlideShows_Widget_Slideshow extends Com_Object {
         $this->lan = $lan;
         return $this;
     }
+    
+    public function setCat($cat) {
+        $this->category = $cat;
+        return $this;
+    }
 
     public function render() {
 
-        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
+        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId, $this->category);
         $count = 0;
         foreach ($list as $slide) {
             $count++;
@@ -34,7 +42,7 @@ class SlideShows_Widget_Slideshow extends Com_Object {
         }
     }
     public function renderPag() {
-        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
+        $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId, $this->category);
         $count = 0;
         ?>
         

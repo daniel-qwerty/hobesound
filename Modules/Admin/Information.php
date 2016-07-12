@@ -39,7 +39,7 @@ class Admin_Information extends Com_Module_Information {
         Com_Helper_Panel::getInstance()->add("link", "Links", "/Admin/Links");
         Com_Helper_Panel::getInstance()->add("list-alt", "Menu", "/Admin/Menu");
         Com_Helper_Panel::getInstance()->add("align-justify", "P&aacute;ginas", "/Admin/Pages");
-        Com_Helper_Panel::getInstance()->add("picture", "SlideShows", "/Admin/SlideShows");
+        Com_Helper_Panel::getInstance()->add("bus", "SlideShows", "/Admin/SlideShows");
         Com_Helper_Panel::getInstance()->add("ok-sign", "Certificaciones", "/Admin/Certifications");
         Com_Helper_Panel::getInstance()->add("briefcase", "Servicios", "/Admin/Services");
         Com_Helper_Panel::getInstance()->add("user", "Clientes", "/Admin/Customers");

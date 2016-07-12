@@ -71,9 +71,9 @@ class SlideShows_Model_SlideShow extends Com_Module_Model {
         return $text->getAll($text->getList()->where("SliLanId={$lanId}"));
     }
 
-    public function getListEnable($lanId) {
+    public function getListEnable($lanId, $cat) {       
         $text = new Entities_SlideShow();
-        return $text->getAll($text->getList()->where("SliLanId={$lanId}")->andWhere("SliStatus=1"));
+        return $text->getAll($text->getList()->where("SliLanId={$lanId} and SliStatus=1 and SliLink='{$cat}'"));
     }
 
 }

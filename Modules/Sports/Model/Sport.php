@@ -41,7 +41,7 @@ class Sports_Model_Sport extends Com_Module_Model {
         $db->SpoId = $intId;
         $db->SpoLanId = $obj->Language;
         $db->SpoTitle = $obj->Title;
-        $db->SpoDescription = $obj->Description;
+        $db->SpoDescription = str_replace("'", "\\'",$obj->Description)  ;
         $db->SpoStatus = $obj->Status;
         if ($image != "") {
             $db->SpoImage = $image;

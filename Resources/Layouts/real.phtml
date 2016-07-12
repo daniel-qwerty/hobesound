@@ -132,13 +132,12 @@
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
-                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
-
+                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->render(); ?>
                         </ul>
                     </div>
 
                     <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
-                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->renderPag(); ?>
+                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->renderPag(); ?>
                     </ul>
                 </div>
             </div>
@@ -150,14 +149,14 @@
 <section id="real-state" class="container content-section">
     <div class="row item-noticias active bg-white" rel="1">
         <div class="col-lg-12 text-center">
-            <h3 class="color-2 text-left"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleAboutUs')->TxtDescription; ?></h3>
+            <h3 class="color-2 text-left"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleRealState')->TxtDescription; ?></h3>
         </div>
 
         <div class="col-lg-12">
-            <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAboutUs')->TxtDescription; ?></p>
+            <p><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
         </div>
         <img class="img-responsive"
-             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/real-state-image.jpg" alt=""/>
+             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/plano.jpg" alt=""/>
 
     </div>
 </section>
