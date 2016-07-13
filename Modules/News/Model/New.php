@@ -85,9 +85,9 @@ class News_Model_New extends Com_Module_Model {
         return $db;
     }
 
-    public function getList($lanId, $limit = 1000) {
+    public function getList($lanId, $limit = 1000, $category) {
         $text = new Entities_New();
-        return $text->getAll($text->getList()->where("NewLanId={$lanId} and NewStatus = 1")->orderBy("NewDate desc")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("NewLanId={$lanId} and NewStatus = 1 and NewCatId='{$category}'")->orderBy("NewDate desc")->limit(0, $limit));
     }
     
     public function getImportant($lanId, $limit = 1000) {

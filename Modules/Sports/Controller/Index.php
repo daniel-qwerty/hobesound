@@ -12,8 +12,8 @@ class Sports_Controller_Index extends Public_Controller_Index {
         //print_r($url);
         //exit();
         
-        //$blog = Blog_Model_Blog::getInstance()->getByUrl($url, $this->lan->LanId);
-        //$this->assign("blog", $blog);
+        $sport = Sports_Model_Sport::getInstance()->getByUrl($url, $this->lan->LanId);
+        $this->assign("sport", $sport);
     }
     
     

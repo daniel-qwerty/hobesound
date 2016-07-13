@@ -15,7 +15,7 @@ foreach ($this->languages as $language) {
     $form->addTab("Imagenes (" . $language->LanName . ")", Com_Helper_Url::getInstance()->urlBase . "/Admin/Sports/Images/lan/" . $language->LanId . "/id/" . get('id'), $active);
 }
 
-$objControl = new Projects_Control_ImageViewer();
+$objControl = new Sports_Control_ImageViewer();
 $objControl->name = "ImageList";
 $objControl->label = "Listado de Imagenes";
 $objControl->default = $this->Images;

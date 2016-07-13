@@ -1,1 +1,173 @@
-<h1>hola mundo </h1>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="sequence" class="seq">
+                    <div class="seq-screen">
+                        <ul class="seq-canvas">
+                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->render(); ?>
+                        </ul>
+                    </div>
+
+                    <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
+                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->renderPag(); ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="club" class=" content-section bg-color-10">
+    <div class="container-fluid">
+        <div class="container">
+            <h2 class="text-red text-center color-5"><?php echo $this->sport->SpoTitle; ?></h2>
+
+            <div class="row bg-white">
+                <div class="col-lg-6 p-content visible-lg hidden-xs"
+                     style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $this->sport->SpoImage; ?>) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+                </div>
+                <div class="col-lg-6 p-content bg-color-5">
+                    <div class="servicio-header">
+                        <h3 class="color-2"><?php echo $this->sport->SpoTitle; ?></h3>
+                    </div>
+                    <p><?php echo $this->sport->SpoDescription; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="season" class="container content-section">
+
+    <div class="container">
+        <h2 class="text-red text-center color-2">para polo Season open om january 2017</h2>
+
+        <h3 class="text-red text-center color-2">For more information contact us</h3>
+
+        <div class="row bg-white">
+            <div class="col-lg-12 p-content bg-color-5 text-center">
+                <ul>
+                    <li>
+                        <a href="http://aapolo.com/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/aapolo.jpg"></a>
+                    </li>
+                    <li>
+                       <a href="http://uspolo.org/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/uspolo.jpg"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.ipc.com/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/ipc.jpg"></a>
+                    </li>
+  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="season" class="container content-section">
+
+    <div class="container">
+        <h2 class="text-red text-center color-2">para jumping Season open om january 2017</h2>
+
+        <h3 class="text-red text-center color-2">For more information contact us</h3>
+
+        <div class="row bg-white">
+            <div class="col-lg-12 p-content bg-color-5 text-center">
+                <ul>
+                    <li>
+                        <a href="http://www.fedecuarg.com.ar/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/fea.jpg"></a>
+                    </li>
+                    <li>
+                       <a href="http://cbh.org.br/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cbh.jpg"></a>
+                    </li>
+                    <li>
+                        <a href="http://fei.org/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/fei.jpg"></a>
+                    </li>
+  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="season" class="container content-section">
+
+    <div class="container">
+        <h2 class="text-red text-center color-2">para dressage Season open om january 2017</h2>
+
+        <h3 class="text-red text-center color-2">For more information contact us</h3>
+
+        <div class="row bg-white">
+            <div class="col-lg-12 p-content bg-color-5 text-center">
+                <ul>
+                    <li>
+                        <a href="https://www.usef.org/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/usef.jpg"></a>
+                    </li>
+                    
+  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="calendar" class="container content-section">
+
+    <div class="container">
+        <h2 class="text-red text-center color-2">Calendar</h2>
+
+        <div class="row bg-white">
+            <div class="col-lg-6 p-content bg-color-5">
+
+                <h3 id="event-title"
+                    class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleRealState')->TxtDescription; ?></h3>
+
+                <p id="event-description"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
+
+                <a id="event-url" class="btn-hobesound-green btn" href="#">more info</a>
+
+            </div>
+            <div class="col-lg-6 p-content">
+                <div id="calendar-ui" class="cal1"></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="tournaments" class="content-section">
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="text-red text-center color-5">Tournaments</h2>
+
+            <div class="col-sm-10 col-md-offset-1">
+                <ul id="sports-scroll">
+                    <?PHP Sports_Widget_Gallery::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="container-fluid content-section bg-color-2">
+    <div class="row">
+        <h2 class="bg-color-7 color-5 text-center"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleNews')->TxtDescription; ?></h2>
+
+        <div class="container">
+            <div class="news-items">
+               <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(6)->setCategory("2")->render(); ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="container-fluid content-section text-center">
+    <h2 class="text-red text-center color-5">Gallery</h2>
+
+    <div class="row">
+        <?PHP Sports_Widget_Galleries::getInstance()->setSpoId($this->sport->SpoId)->setLan($this->lan)->render(); ?>
+
+
+    </div>
+</section>

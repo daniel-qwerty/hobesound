@@ -125,7 +125,7 @@ class Sports_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image');
         $this->assign('Footer');
         $this->assign('Youtube');
-        $this->assign('Images', Sports_Model_Media::getInstance()->getListByProject(get('id'), get('lan')));
+        $this->assign('Images', Sports_Model_Media::getInstance()->getListBySport(get('id'), get('lan')));
         $this->assign("languages", $languages);
         $this->assign("Language", $language);
     }

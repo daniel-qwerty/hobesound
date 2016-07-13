@@ -1,0 +1,126 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Proyectos";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Projects");
+
+$form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
+
+$control = new Com_Wizard_Form_Control_Hidden();
+$control->name = "Language";
+$control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Client";
+$control->label = "Cliente";
+$control->default = $this->Client;
+$control->required = true;
+foreach ($this->Clients as $type) {
+    $control->addItem($type->CusId, $type->CusName);
+}
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Title";
+$control->label = "Titulo";
+$control->default = $this->Title;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Text();
+$control->name = "Services";
+$control->label = "Servicios Prestados";
+$control->default = $this->Services;
+$control->required = true;
+$control->rows = 2;
+$control->addParameter("style ", "height:90px;");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "Period";
+$control->label = "Periodo";
+$control->default = $this->Period;
+$control->length = 50;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Participation";
+$control->label = "Participacion";
+$control->default = $this->Participation;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Text();
+$control->name = "Resume";
+$control->label = "Resumen";
+$control->default = $this->Resume;
+$control->required = true;
+$control->rows = 2;
+$control->addParameter("style ", "height:120px;");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Editor();
+$control->name = "Description";
+$control->label = "Descripcion";
+$control->default = $this->Description;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "DateStart";
+$control->label = "Fecha Inicio";
+$control->default = $this->DateStart;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "DateEnd";
+$control->label = "Fecha Fin";
+$control->default = $this->DateEnd;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "X";
+$control->label = "Eje X";
+$control->default = $this->X;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Y";
+$control->label = "Eje Y";
+$control->default = $this->Y;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Marker";
+$control->label = "Marcador";
+$control->default = $this->Marker;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
+$form->add($control);
+
+$form->render();
