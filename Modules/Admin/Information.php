@@ -39,13 +39,14 @@ class Admin_Information extends Com_Module_Information {
         Com_Helper_Panel::getInstance()->add("link", "Links", "/Admin/Links");
         Com_Helper_Panel::getInstance()->add("list-alt", "Menu", "/Admin/Menu");
         Com_Helper_Panel::getInstance()->add("align-justify", "P&aacute;ginas", "/Admin/Pages");
-        Com_Helper_Panel::getInstance()->add("bus", "SlideShows", "/Admin/SlideShows");
-        Com_Helper_Panel::getInstance()->add("ok-sign", "Certificaciones", "/Admin/Certifications");
-        Com_Helper_Panel::getInstance()->add("briefcase", "Servicios", "/Admin/Services");
-        Com_Helper_Panel::getInstance()->add("user", "Clientes", "/Admin/Customers");
-        Com_Helper_Panel::getInstance()->add("wrench", "Proyectos", "/Admin/Projects");
+        Com_Helper_Panel::getInstance()->add("picture", "SlideShows", "/Admin/SlideShows");
+        Com_Helper_Panel::getInstance()->add("calendar", "Eventos", "/Admin/Calendar");
+        Com_Helper_Panel::getInstance()->add("picture", "Galeria Real State", "/Admin/Gallery2");
+        Com_Helper_Panel::getInstance()->add("star", "Life Style", "/Admin/Life");
+        Com_Helper_Panel::getInstance()->add("bookmark", "Preserv", "/Admin/Preserv");
         Com_Helper_Panel::getInstance()->add("file", "Noticias", "/Admin/News");
         Com_Helper_Panel::getInstance()->add("inbox", "Contacto", "/Admin/Contact");
+        Com_Helper_Panel::getInstance()->add("flash", "Sport", "/Admin/Sport");
         
     }
 

@@ -29,7 +29,7 @@ class Com_Helper_Panel extends Com_Object {
      */
     public function add($image, $label, $href = "", $action = "") {
         $this->lstItems[] = array(
-            'image' => 'fa fa-'.$image
+            'image' => 'glyphicon glyphicon-'.$image
             , 'label' => $label
             , 'href' => $href
             , 'action' => $action

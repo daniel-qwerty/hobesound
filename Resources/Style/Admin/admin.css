@@ -51,21 +51,21 @@
 .bs-glyphicons li a{
     height: 106px;
     width: 150px;
-    display:block;
-    position:relative;
-    padding:30px 10px;
+    display: block;
+    position: relative;
+    padding: 30px 10px;
     text-align: center;
-    color:#231f20;
+    color: #fff;
     font-size: 16px;
     text-decoration: none;
-    background-color: #F7931D;
+    background-color: #009626;
     border: 1px solid #fff;
 }
 
 .bs-glyphicons li a:hover{
     color:#fff;
-    border: 1px solid #282927;
-    background-color: #282927;
+    border: 1px solid #004216;
+    background-color: #004216;
 }
 
 .glyphicon {
