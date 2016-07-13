@@ -628,13 +628,17 @@ ul.banner-social-buttons {
 
 #news .news-items h2 {
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     font-size: 20px;
+}
+#news .news-items p {
+    padding: 0 10px;
 }
 
 #news .news-items a {
     display: block;
-    height: 100%;
+    height: 315px;
+    overflow: hidden;
 }
 
 #news .news-item {
@@ -744,6 +748,9 @@ div.hsp-item {
 #contact h2 {
     margin: 0;
     padding: 15px 0;
+}
+#contact ul{
+    margin: 65px 0;
 }
 
 #contact form {
