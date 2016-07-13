@@ -6,11 +6,11 @@
 var urlBase = "http://localhost/hobesound";
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
+    //if ($(".navbar").offset().top > 50) {
+    //    $(".navbar-fixed-top").addClass("top-nav-collapse");
+    //} else {
+    //    $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    //}
 }
 
 $(window).scroll(collapseNavbar);
@@ -18,12 +18,26 @@ $(document).ready(collapseNavbar);
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
+    //$('a.page-scroll').bind('click', function(event) {
+    //    var $anchor = $(this);
+    //    $('html, body').stop().animate({
+    //        scrollTop: $($anchor.attr('href')).offset().top
+    //    }, 1500, 'easeInOutExpo');
+    //    event.preventDefault();
+    //});
+
+    $(".site-header .header-toggle").on("click", function (e) {
+        e.preventDefault();
+
+        var this_target = $("body"),
+            this_menu = $(this).siblings(".header-menu");
+
+        if (this_target.hasClass("active")) {
+            this_target.removeClass("active");
+            this_menu.find("*").removeAttr("style").removeClass("active");
+        } else {
+            this_target.addClass("active");
+        }
     });
 
     initSports();
@@ -238,4 +252,10 @@ function saveContact(errorMesage, Message, lanId) {
 
 
     }
+}
+
+function initMenu(){
+    /*-- MOBILE MENU --*/
+
+    /*-- MOBILE MENU --*/
 }

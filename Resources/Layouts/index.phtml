@@ -95,37 +95,58 @@
     echo Com_Helper_Style::getInstance();
     ?>
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" class="site-left" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<nav class="navbar navbar-custom navbar-fixed-top hidden" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
-            </a>
-        </div>
+<div class="site-header">
+    <div class="header-logo">
 
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#download">Download</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <a href="http://www.muwom.com/" title="MUWOM">
+            <img class="img-responsive" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo-hobesound.jpg"
+                                                           alt="MUWOM">
+        </a>
+
     </div>
-</nav>
+    <div class="language-selector"><a class="lang_link lang_active" href="http://www.muwom.com/">es</a>/<a
+            class="lang_link " href="http://www.muwom.com/en/">en</a></div>
+    <div class="header-menu">
+        <nav>
+            <ul id="menu-inneramenu" class="">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/nosotros/">Nosotros</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/servicios/">Servicios</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/proyectos/">Proyectos</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/proyectos-propios/">Proyectos propios</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/blog/">Blog</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                        href="http://www.muwom.com/contacto/">Contacto</a></li>
+            </ul>
+            <div class="contact-social">
+                <ul class="social-icons clearfix">
+                    <li class="col-xs-4"><a href="https://twitter.com/muwom" target="_blank" title=""><i
+                                class="fa fa-twitter"></i></a></li>
+                    <li class="col-xs-4"><a href="https://www.facebook.com/muwom" target="_blank" title=""><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li class="col-xs-4"><a href="https://www.instagram.com/muwom/" target="_blank" title=""><i
+                                class="fa fa-instagram"></i></a></li>
+                    <li class="col-xs-4"><a href="https://www.linkedin.com/company/muwom" target="_blank" title=""><i
+                                class="fa fa-linkedin"></i></a></li>
+                    <li class="col-xs-4"><a
+                            href="https://play.spotify.com/user/1144799332/playlist/2aSag2sGoonAAMNgn7GHaO?play=true&amp;utm_source=open.spotify.com&amp;utm_medium=open"
+                            target="_blank" title=""><i class="fa fa-spotify"></i></a></li>
+                    <li class="col-xs-4"><a href="https://www.youtube.com/user/themuwom" target="_blank" title=""><i
+                                class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header-toggle">
+        <i class="fa fa-bars"></i>
+    </div>
+</div>
 
 <header class="intro">
     <div class="intro-body">
