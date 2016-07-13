@@ -221,12 +221,11 @@ Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
 echo Com_Helper_Script::getInstance();
 
 ?>
-
 <script>
     $(document).ready(function () {
-
         var thisMonth = moment().format('YYYY-MM');
-        var eventArray = [
+        <?PHP Calendar_Widget_Events::getInstance()->setLan($this->lan)->setDate("2016/07")->render(); ?>
+        /*var eventArray = [
             {
                 title: 'Multi-Day Event',
                 description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
@@ -243,8 +242,7 @@ echo Com_Helper_Script::getInstance();
                 description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
                 url: "http://neblux.com"
             }
-        ];
-
+        ];*/
         var clndr1 = $('.cal1').clndr({
             events: eventArray,
             clickEvents: {
@@ -254,7 +252,6 @@ echo Com_Helper_Script::getInstance();
                     $("#event-title").html(target.events[0].title);
                     $("#event-description").html(target.events[0].description);
                     $("#event-url").attr("href",target.events[0].url);
-
                 },
                 today: function () {
                     console.log('Cal-1 today');
@@ -279,6 +276,7 @@ echo Com_Helper_Script::getInstance();
         });
     });
 </script>
+
 </body>
 
 </html>

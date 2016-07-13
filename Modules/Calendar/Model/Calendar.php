@@ -75,5 +75,15 @@ class Calendar_Model_Calendar extends Com_Module_Model {
         $text = new Entities_Calendar();
         return $text->getAll($text->getList());
     }
+    
+    public function getListByDate($lanId, $date) {
+        $text = new Entities_Calendar();
+        return $text->getAll($text->getList()->where("CalLanId={$lanId} and CalStatus = 1 and DATE_FORMAT(CalDate,'%Y/%m') = '{$date}'"));
+    }
+    
+    public function getListByDate2($lanId, $date) {
+        $text = new Entities_Calendar();
+        return $text->getAll($text->getList()->where("CalLanId={$lanId} and CalStatus = 1 and CalDate = '{$date}'"));
+    }
 
 }

@@ -119,13 +119,19 @@
 
         <div class="row bg-white">
             <div class="col-lg-6 p-content bg-color-5">
-
+                <?PHP if(count($this->calendar) != 0){
+                    $title = $this->calendar[0]->CalEvent;
+                    $description = $this->calendar[0]->CalDescription;
+                }  else {
+                    $title = "No eventos en el dia";
+                    $description = "No eventos en el dia"; 
+                }  ?>
                 <h3 id="event-title"
-                    class="color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleRealState')->TxtDescription; ?></h3>
+                    class="color-2"><?PHP echo $title ?></h3>
 
-                <p id="event-description"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtRealState')->TxtDescription; ?></p>
+                <p id="event-description"><?PHP echo $description ?></p>
 
-                <a id="event-url" class="btn-hobesound-green btn" href="#">more info</a>
+                <a id="event-url" class="btn-hobesound-green btn hidden" href="#">more info</a>
 
             </div>
             <div class="col-lg-6 p-content">
@@ -171,3 +177,6 @@
 
     </div>
 </section>
+
+
+

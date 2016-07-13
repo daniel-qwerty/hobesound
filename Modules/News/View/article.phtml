@@ -30,6 +30,6 @@
         <div class="col-lg-12"><h2 class="text-pink cocogose" style="margin-top: 15px"><?PHP echo $this->translator->news; ?></h2></div>
     </div>
     <div class="row nav-noticias">
-        <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(3)->render(); ?>
+        <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(3)->setCategory($this->article->NewCatId)->render(); ?>
     </div>
 </section>
