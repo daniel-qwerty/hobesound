@@ -28,11 +28,12 @@ class Sports_Widget_Gallery extends Com_Object {
         $list = Sports_Model_Sport::getInstance()->getList($this->lan->LanId, $this->limit);
         foreach ($list as $new) {
                 ?>
-
-                
-
-                <li><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "sports/" . $new->SpoId); ?>"><img class="img-responsive" src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->SpoImage; ?>"></a></li>
-
+                <li>
+                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "sports/" . $new->SpoId); ?>" rel="<?= $new->SpoId ?>">
+                        <img class="img-responsive" src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->SpoImage; ?>">
+                        <div class="title-overlay"> <p> <?= $new->SpoTitle ?> </p></div>
+                    </a>
+                </li>
             <?php 
                
             

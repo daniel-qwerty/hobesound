@@ -51,6 +51,7 @@ $(function() {
     initHsp();
     initNews();
     initFs();
+    toggleSportOverlay();
 });
 
 // Closes the Responsive Menu on Menu Item Click
@@ -262,7 +263,20 @@ function saveContact(errorMesage, Message, lanId) {
 function toggleMenu(){
     $( ".header-menu nav" ).animate({
         height: "toggle"
-    }, 700, function() {
+    }, 300, function() {
         // Animation complete.
     });
+}
+
+function toggleSportOverlay()
+{
+    $( "#sports li a" ).hover(
+        function(e) {
+            console.log(e.currentTarget.rel);
+            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
+        }, function(e) {
+            console.log(e.currentTarget.rel);
+            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
+        }
+    );
 }
