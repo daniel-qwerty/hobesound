@@ -104,12 +104,14 @@
         </a>
 
     </div>
-    <div class="language-selector"><a class="lang_link lang_active" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("es", ""); ?>">es</a>/<a
-            class="lang_link " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("en", ""); ?>">en</a></div>
+    <div class="language-selector">
+        <a class="lang_link lang_active " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("en", ""); ?>">en</a>/
+        <a class="lang_link " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("es", ""); ?>">es</a>
+    </div>
     <div class="header-menu">
         <nav style="display: none">
             <ul id="menu-inneramenu" class="">
-                <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render2(); ?>
             </ul>
             <div class="contact-social">
                 <ul class="social-icons clearfix">                    
@@ -117,8 +119,6 @@
                                 class="fa fa-facebook"></i></a></li>
                     <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkInstagram')->LinUrl; ?>" target="_blank" title=""><i
                                 class="fa fa-instagram"></i></a></li>                    
-                    <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkYoutube')->LinUrl; ?>" target="_blank" title=""><i
-                                class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
         </nav>
@@ -149,9 +149,10 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-1">
 
-
-                    <p style="font-size: 18px;"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAddress')->TxtDescription; ?></p>
                     <ul class="list-unstyled">
+                        <li style="font-size: 18px;">
+                            <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtAddress')->TxtDescription; ?>
+                        </li>
                         <li style="font-size: 18px;"><i
                                 class="fa fa-phone fa-fw"></i> <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtPhone')->TxtDescription; ?>
                         </li>
@@ -188,15 +189,8 @@
     </div>
 </section>
 
-<footer>
-    <div class="container text-center">
-        <p><a target="_blank" href="http://qwerty.com.bo/es/page/index.html?ref=hobesound"><img height="40"
-                                                                                                src="http://localhost/bolpegas-web/Resources/Image/Public/logo-qwerty.png"
-                                                                                                alt=""></a></p>
-
-        <p>Copyright © QWERTY 2016</p>
-    </div>
-</footer>
+ <!--FOOTER-->
+        <?PHP Pages_Widget_Footer::getInstance()->render(); ?>
 
 
 <!-- jQuery -->
