@@ -48,6 +48,28 @@ class Menu_Widget_Menu extends Com_Object {
             <?PHP
         }
     }
+    
+    public function render2() {
+
+        $list = Menu_Model_Menu::getInstance()->getMenuList($this->lan->LanId, $this->parent);
+        $actualUrl = Com_Helper_Url::getInstance()->urlBase . '/' . get("QUERY_STRING");
+        ?>
+
+        <?PHP
+        foreach ($list as $item) {
+            $url = Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, $item->MenUrl);
+            $active = false;
+            if ($actualUrl == $url) {
+                $active = true;
+            }
+            ?>
+            
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page "><a class="page-scroll" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/index.html' . $item->MenUrl); ?>"><?PHP echo $item->MenAlias; ?></a></li>
+
+            <?PHP
+        }
+    }
 
 }
 ?>
