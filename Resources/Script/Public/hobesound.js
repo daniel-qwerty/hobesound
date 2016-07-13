@@ -25,7 +25,13 @@ $(function() {
     //    }, 1500, 'easeInOutExpo');
     //    event.preventDefault();
     //});
-
+    $( ".site-header" ).hover(
+        function() {
+            toggleMenu();
+        }, function() {
+            toggleMenu();
+        }
+    );
     $(".site-header .header-toggle").on("click", function (e) {
         e.preventDefault();
 
@@ -39,6 +45,7 @@ $(function() {
             this_target.addClass("active");
         }
     });
+
 
     initSports();
     initHsp();
@@ -252,8 +259,10 @@ function saveContact(errorMesage, Message, lanId) {
     }
 }
 
-function initMenu(){
-    /*-- MOBILE MENU --*/
-
-    /*-- MOBILE MENU --*/
+function toggleMenu(){
+    $( ".header-menu nav" ).animate({
+        height: "toggle"
+    }, 700, function() {
+        // Animation complete.
+    });
 }
