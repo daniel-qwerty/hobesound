@@ -73,8 +73,6 @@
           type="image/x-icon"/>
     <!-- Google Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-
-
     <!-- Custom Fonts -->
 
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
@@ -89,51 +87,23 @@
         ->addFile("Public/sequence-theme.basic.min.css")
         ->addFile("Public/jquery.flexisel.css")
         ->addFile("Public/sweetalert.css")
-
         ->addFile("Public/slick.css")
         ->addFile("Public/slick-theme.css");
     echo Com_Helper_Style::getInstance();
     ?>
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" class="site-left" data-target=".navbar-fixed-top">
 
-<nav class="navbar navbar-custom navbar-fixed-top hidden" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#download">Download</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <?PHP $this->getContent();?>
     
 <section id="location" class="container-fluid content-section text-center">
     <div class="row">
+
         <h2 class="bg-color-3 color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtLocation')->TxtDescription; ?></h2>
 
         <div id="map"></div>
+
     </div>
 </section>
 
