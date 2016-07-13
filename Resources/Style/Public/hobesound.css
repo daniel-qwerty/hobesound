@@ -795,6 +795,32 @@ div.hsp-item {
     background-repeat: repeat-x;
 }
 
+
+#tournaments li a {
+    display: block;
+    position: relative;
+}
+
+#tournaments li a .title-overlay {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    vertical-align: middle;
+    text-align: center;
+}
+#tournaments li a .title-overlay p{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: large;
+}
+
 #gallery {
     margin-top: 0;
     background: #000000;

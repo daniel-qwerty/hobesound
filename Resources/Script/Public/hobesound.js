@@ -18,13 +18,13 @@ $(document).ready(collapseNavbar);
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    //$('a.page-scroll').bind('click', function(event) {
-    //    var $anchor = $(this);
-    //    $('html, body').stop().animate({
-    //        scrollTop: $($anchor.attr('href')).offset().top
-    //    }, 1500, 'easeInOutExpo');
-    //    event.preventDefault();
-    //});
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
     $( ".site-header" ).hover(
         function() {
             toggleMenu();
@@ -270,13 +270,15 @@ function toggleMenu(){
 
 function toggleSportOverlay()
 {
-    $( "#sports li a" ).hover(
+    $( "#sports li a,#tournaments li a" ).hover(
         function(e) {
             console.log(e.currentTarget.rel);
             $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
+            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
         }, function(e) {
             console.log(e.currentTarget.rel);
             $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
+            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
         }
     );
 }
