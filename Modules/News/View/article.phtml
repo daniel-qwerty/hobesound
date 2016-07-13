@@ -82,8 +82,16 @@
                 <div class="col-lg-12"><h2 class="text-pink cocogose"
                                            style="margin-top: 15px"><?PHP echo $this->translator->news; ?></h2></div>
             </div>
-            <div class="row nav-news">
-                <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(3)->setCategory($this->article->NewCatId)->render(); ?>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="container-fluid content-section bg-color-2">
+    <div class="row">
+        <h2 class="bg-color-7 color-5 text-center"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleNews')->TxtDescription; ?></h2>
+        <div class="container">
+            <div class="news-items">
+                <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(6)->setCategory($this->article->NewCatId)->render(); ?>
             </div>
         </div>
     </div>

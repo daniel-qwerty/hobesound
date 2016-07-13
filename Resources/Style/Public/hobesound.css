@@ -875,7 +875,10 @@ div.hsp-item {
 #news .item-news .col-lg-12 {
     padding: 15px;
 }
-
+#news .nav-news{
+    padding: 15px 0;
+    background: #ac8b3c;
+}
 #news .nav-news h2 {
     margin-bottom: 0;
     font-size: 20px;
@@ -911,9 +914,6 @@ div.hsp-item {
     margin-bottom: 5px;
 }
 
-#news .nav-news a {
-    color: #ed1c24;
-}
 
 #news .p-content-2 {
     text-align: justify;
