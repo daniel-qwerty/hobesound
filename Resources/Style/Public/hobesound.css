@@ -166,7 +166,7 @@ ul {
 
 .nav-pager ul li.active a,
 .nav-prevnext ul li.active a {
-    background-color: #1fc2df;
+    background-color: #004216;
 }
 
 .nav-pager ul li {
@@ -279,6 +279,18 @@ ul {
     background-color: #fff;
 }
 
+.site-header .header-menu nav ul.social-icons li a {
+    display: block;
+    padding: 0;
+    height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #fff;
+}
+
 .site-header .header-menu nav ul li ul {
     display: none;
 }
@@ -291,12 +303,13 @@ ul {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-color: #1fc2df;
+    background-color: #004216;
 }
 
 .site-header .header-menu nav > ul > li:hover > a,
 .site-header .header-menu nav > ul > li.active > a {
-    background-color: #1fc2df;
+    background-color: #004216;
+    color: #ffffff;
 }
 
 .site-header .header-menu nav > ul > li.active > ul {
@@ -343,7 +356,7 @@ ul {
     height: 34px;
     border: none;
     padding: 0 10px 0 0;
-    color: #1fc2df
+    color: #004216
 }
 
 .site-header .language-selector {
@@ -358,7 +371,7 @@ ul {
 }
 
 .site-header .language-selector .lang_active {
-    color: #1fc2df
+    color: #007e5f
 }
 
 .site-header .header-logo {
