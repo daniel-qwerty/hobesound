@@ -36,6 +36,7 @@
         </div>
     </div>
 </section>
+<?PHP Sports_Widget_Banner::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
 <section id="season" class="container content-section">
 
     <div class="container">
@@ -102,9 +103,7 @@
                 <ul>
                     <li>
                         <a href="https://www.usef.org/"><img src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/usef.jpg"></a>
-                    </li>
-                    
-  
+                    </li>             
                 </ul>
             </div>
         </div>

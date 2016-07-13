@@ -38,8 +38,8 @@ class News_Widget_News extends Com_Object {
                 <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "news/article/" . $new->NewId); ?>" class="bg-color-6">
                     <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NewImage; ?>" alt=""/>
 
-                    <h2 class="color-2"><?PHP echo substr($new->NewTitle, 0, 90) ?></h2>                  
-                    <p class="p-content"><?PHP echo substr($new->NewDescription, 0, 170) ?></p>
+                    <h2 class="color-2"><?PHP echo $new->NewTitle; ?></h2>                  
+                    <p class="p-content"><?PHP echo $new->NewDescription;?></p>
                 </a>
             </div>
             <?php

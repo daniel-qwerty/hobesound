@@ -37,8 +37,8 @@ class News_Widget_News extends Com_Object {
         <div class="noticia">
             <img src="<?PHP echo Com_Helper_Url::getInstance()->getUploads() ?>/Image/<?PHP echo $new->NewImage; ?>" alt=""/>
 
-            <div class="noticia-titulo lato-light"><p><?PHP echo substr($new->NewTitle,0, 30) ?></p></div>
-            <div class="noticia-descripcion lato-semibold text-pink"><p><?PHP echo substr($new->NewDescription,0, 75).'...'; ?></p></div>
+            <div class="noticia-titulo lato-light"><p><?PHP echo $new->NewTitle; ?></p></div>
+            <div class="noticia-descripcion lato-semibold text-pink"><p><?PHP echo $new->NewDescription;?></p></div>
             <div class="noticia-mas lato-thin-italic  text-right">
                 <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NewUrl); ?>">
                     Leia mais...
