@@ -274,11 +274,9 @@ function toggleSportOverlay()
 {
     $( "#sports li a,#tournaments li a" ).hover(
         function(e) {
-            console.log(e.currentTarget.rel);
             $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
             $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
         }, function(e) {
-            console.log(e.currentTarget.rel);
             $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
             $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
         }

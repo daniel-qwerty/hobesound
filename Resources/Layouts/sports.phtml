@@ -199,11 +199,9 @@
 
 
 <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 <!-- Google Map -->
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script>
 <?php
 Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
     ->addFile("Public/bootstrap.min.js")
@@ -222,28 +220,11 @@ Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
 echo Com_Helper_Script::getInstance();
 
 ?>
-<script>
-    $(document).ready(function () {
-        var thisMonth = moment().format('YYYY-MM');
+
+<script type="text/javascript" language="Javascript">
+    $(function() {
         <?PHP Calendar_Widget_Events::getInstance()->setLan($this->lan)->setDate("2016/07")->render(); ?>
-        /*var eventArray = [
-            {
-                title: 'Multi-Day Event',
-                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
-                date: thisMonth + '-14',
-                url: "http://neblux.com"
-            }, {
-                date: thisMonth + '-23',
-                title: 'Another Multi-Day Event',
-                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
-                url: "http://neblux.com"
-            }, {
-                date: thisMonth + '-27',
-                title: 'Single Day Event',
-                description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
-                url: "http://neblux.com"
-            }
-        ];*/
+
         var clndr1 = $('.cal1').clndr({
             events: eventArray,
             clickEvents: {

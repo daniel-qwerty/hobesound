@@ -38,7 +38,9 @@ class Com_Helper_Script extends Com_Object {
         $url = Com_Helper_Url::getInstance()->getScript();
         $result = "";
         foreach ($this->lstFiles as $file) {
-            $result.='<script type="text/javascript" language="Javascript" src="' . $url . '/' . $file . '"></script>';
+            $result.='<script type="text/javascript" language="Javascript" src="' . $url . '/' . $file . '"></script>
+
+            ';
         }
         return $result;
     }
