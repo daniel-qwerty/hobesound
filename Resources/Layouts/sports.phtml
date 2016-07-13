@@ -86,7 +86,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <?PHP
     Com_Helper_Style::getInstance()->addFile("Public/bootstrap.css")
-        ->addFile("Public/hobesound.css")
+
         ->addFile("Public/font-awesome.min.css")
         ->addFile("Public/sequence-theme.basic.min.css")
         ->addFile("Public/jquery.flexisel.css")
@@ -94,7 +94,8 @@
         ->addFile("Public/lightbox.css")
         ->addFile("Public/clndr.css")
         ->addFile("Public/slick.css")
-        ->addFile("Public/slick-theme.css");
+        ->addFile("Public/slick-theme.css")
+    ->addFile("Public/hobesound.css");
     echo Com_Helper_Style::getInstance();
     ?>
 </head>
@@ -202,6 +203,7 @@
 
 
 <!-- Google Map -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA"></script>
 <?php
 Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
     ->addFile("Public/bootstrap.min.js")
