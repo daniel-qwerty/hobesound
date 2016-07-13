@@ -73,7 +73,7 @@ class Sports_Model_Sport extends Com_Module_Model {
 
     public function getByUrl($url, $lanId) {
         $db = new Entities_Sport();
-        $db->SpoUrl = $url;
+        $db->SpoId = $url;
         $db->SpoLanId = $lanId;
         $db->get();
         return $db;

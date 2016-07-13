@@ -4,6 +4,7 @@ class News_Widget_News extends Com_Object {
 
     private $lan;
     private $limit;
+      private $category;
 
     /**
      *
@@ -22,10 +23,15 @@ class News_Widget_News extends Com_Object {
         $this->limit = $limit;
         return $this;
     }
+    
+    public function setCategory($category) {
+        $this->category = $category;
+        return $this;
+    }
 
     public function render() {
         
-        $list = News_Model_New::getInstance()->getList($this->lan->LanId, $this->limit);
+        $list = News_Model_New::getInstance()->getList($this->lan->LanId, $this->limit, $this->category);
         foreach ($list as $new) {
         ?>
         <div class="noticia">

@@ -31,7 +31,7 @@ class Sports_Widget_Gallery extends Com_Object {
 
                 
 
-                <li><a href=""><img class="img-responsive" src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->SpoImage; ?>"></a></li>
+                <li><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "sports/" . $new->SpoId); ?>"><img class="img-responsive" src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->SpoImage; ?>"></a></li>
 
             <?php 
                

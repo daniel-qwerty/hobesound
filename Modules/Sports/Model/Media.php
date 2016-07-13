@@ -62,7 +62,7 @@ class Sports_Model_Media extends Com_Module_Model {
         return $db->getAll($db->getList());
     }
 
-    public function getListByProject($SpoId, $lanId) {
+    public function getListBySport($SpoId, $lanId) {
         $db = new Entities_Media();
         return $db->getAll($db->getListQuery()->where("MedSpoId={$SpoId}")->andWhere("MedLanId={$lanId}")->orderBy("MedId"));
     }
