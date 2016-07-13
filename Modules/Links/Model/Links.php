@@ -68,5 +68,11 @@ class Links_Model_Links extends Com_Module_Model {
         $contact = new Entities_Links();
         return $contact->getAll($contact->getList());
     }
+     public function getByAlias($strName) {
+        $db = new Entities_Links();
+        $db->LinName = $strName;
+        $db->get();
+        return $db;
+    }
 
 }

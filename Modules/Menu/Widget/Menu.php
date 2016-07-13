@@ -42,26 +42,11 @@ class Menu_Widget_Menu extends Com_Object {
                 $active = true;
             }
             ?>
-                     <!--<li class="home cocogose <?PHP //echo ($active ? "active" : "");  ?>" sons="<?PHP //echo $item->MenId;  ?>"><a href="<?PHP //echo $url;  ?>"><p><?PHP //echo $item->MenAlias;  ?></p>
-                        <p class="menu-bullet"><img src="<?PHP //echo Com_Helper_Url::getInstance()->getImage();  ?>/Public/menu-bullet.png" alt=""/></p></a>
-                     </li> -->
 
-            <li>
-                <a class="page-scroll" href="<?PHP echo $item->MenUrl; ?>"><?PHP echo $item->MenAlias; ?></a>
-                
-            </li>
-            
-            
-
-            
-
-
+            <li class="menu-item menu-item-type-post_type menu-item-object-page "><a class="page-scroll" href="<?PHP echo $item->MenUrl; ?>"><?PHP echo $item->MenAlias; ?></a></li>
 
             <?PHP
         }
-        ?>
-
-        <?PHP
     }
 
 }

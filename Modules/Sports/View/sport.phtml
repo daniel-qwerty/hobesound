@@ -5,12 +5,12 @@
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
-                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->render(); ?>
+                            <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat($this->sport->SpoTitle)->render(); ?>
                         </ul>
                     </div>
 
                     <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
-                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat("RealState")->renderPag(); ?>
+                        <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat($this->sport->SpoTitle)->renderPag(); ?>
                     </ul>
                 </div>
             </div>

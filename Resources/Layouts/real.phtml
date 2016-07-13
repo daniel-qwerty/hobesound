@@ -94,37 +94,41 @@
         echo Com_Helper_Style::getInstance();
         ?>
     </head>
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body id="page-top" class="site-left" data-spy="scroll" data-target=".navbar-fixed-top">
 
-        <nav class="navbar navbar-custom navbar-fixed-top hidden" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
-                    </a>
-                </div>
+        <div class="site-header">
+            <div class="header-logo">
 
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">About</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#download">Download</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/index.html'); ?>" title="HOBE SOUND">
+                    <img class="img-responsive"
+                         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo-hobesound.jpg"
+                         alt="MUWOM">
+                </a>
+
             </div>
-        </nav>
+            <div class="language-selector"><a class="lang_link lang_active" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("es", ""); ?>">es</a>/<a
+                    class="lang_link " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("en", ""); ?>">en</a></div>
+            <div class="header-menu">
+                <nav style="display: none">
+                    <ul id="menu-inneramenu" class="">
+                        <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(10)->render(); ?>
+                    </ul>
+                    <div class="contact-social">
+                        <ul class="social-icons clearfix">                    
+                            <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" target="_blank" title=""><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" target="_blank" title=""><i
+                                        class="fa fa-instagram"></i></a></li>                    
+                            <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkYoutube')->LinUrl; ?>" target="_blank" title=""><i
+                                        class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
 
         <?PHP $this->getContent(); ?>
 
@@ -184,7 +188,7 @@
         </section>
 
         <!--FOOTER-->
- <?PHP Pages_Widget_Footer::getInstance()->render();?>
+        <?PHP Pages_Widget_Footer::getInstance()->render(); ?>
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

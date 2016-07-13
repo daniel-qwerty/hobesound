@@ -36,7 +36,7 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">para polo Season open om january 2017</h2>
+                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
 
                     <h3 class="text-red text-center color-2">For more information contact us</h3>
 
@@ -66,7 +66,7 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">para jumping Season open om january 2017</h2>
+                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
 
                     <h3 class="text-red text-center color-2">For more information contact us</h3>
 
@@ -95,7 +95,7 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">para dressage Season open om january 2017</h2>
+                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
 
                     <h3 class="text-red text-center color-2">For more information contact us</h3>
 

@@ -92,7 +92,41 @@
     echo Com_Helper_Style::getInstance();
     ?>
 </head>
-<body id="page-top" data-spy="scroll" class="site-left" data-target=".navbar-fixed-top">
+<body id="page-top" class="site-left" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<div class="site-header">
+    <div class="header-logo">
+
+        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/index.html'); ?>" title="HOBE SOUND">
+            <img class="img-responsive"
+                 src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo-hobesound.jpg"
+                 alt="HOBE SOUND">
+        </a>
+
+    </div>
+    <div class="language-selector"><a class="lang_link lang_active" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("es", ""); ?>">es</a>/<a
+            class="lang_link " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("en", ""); ?>">en</a></div>
+    <div class="header-menu">
+        <nav style="display: none">
+            <ul id="menu-inneramenu" class="">
+                <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+            </ul>
+            <div class="contact-social">
+                <ul class="social-icons clearfix">                    
+                    <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" target="_blank" title=""><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkInstagram')->LinUrl; ?>" target="_blank" title=""><i
+                                class="fa fa-instagram"></i></a></li>                    
+                    <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkYoutube')->LinUrl; ?>" target="_blank" title=""><i
+                                class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header-toggle">
+        <i class="fa fa-bars"></i>
+    </div>
+</div>
 
 
 <?PHP $this->getContent();?>
