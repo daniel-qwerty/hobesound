@@ -36,7 +36,7 @@ class Preserv_Widget_Gallery extends Com_Object {
                     </div>
                     <p><?PHP echo $new->CerDescription; ?></p>
                 </div>
-                <div class="col-lg-6 p-content visible-lg hidden-xs"
+                <div class="col-lg-6 p-content"
                      style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->CerImage; ?>) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
                 </div>
 
