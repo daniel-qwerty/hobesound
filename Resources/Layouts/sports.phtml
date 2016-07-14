@@ -81,7 +81,6 @@
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <?PHP
@@ -114,7 +113,7 @@
             <div class="language-selector">
                 <a class="lang_link lang_active " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("en", ""); ?>">en</a>/
                 <a class="lang_link " href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl("es", ""); ?>">es</a>
-                
+
             </div>
             <div class="header-menu">
                 <nav style="display: none">
@@ -122,12 +121,12 @@
                         <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(13)->render(); ?>
                     </ul>
                     <div class="contact-social">
-                        <ul class="social-icons clearfix">                    
+                        <ul class="social-icons clearfix">
                             <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" target="_blank" title=""><i
                                         class="fa fa-facebook"></i></a></li>
                             <li class="col-xs-4"><a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" target="_blank" title=""><i
-                                        class="fa fa-instagram"></i></a></li>                    
-                            
+                                        class="fa fa-instagram"></i></a></li>
+
                         </ul>
                     </div>
                 </nav>
@@ -203,28 +202,32 @@
 
 
 <!-- Google Map -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA"></script>
-<?php
-Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
-    ->addFile("Public/bootstrap.min.js")
-    ->addFile("Public/jquery.easing.min.js")
-    ->addFile("Public/imagesloaded.pkgd.min.js")
-    ->addFile("Public/sequence.min.js")
-    ->addFile("Public/sequence-theme.basic.min.js")
-    ->addFile("Public/jquery.flexisel.js")
-    ->addFile("Public/slick.min.js")
-    ->addFile("Public/clndr.js")
-    ->addFile("Public/lightbox.min.js")
-    ->addFile("Public/sweetalert.min.js")
-    ->addFile("Public/hobesound.js");
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqGpRp-Dx3XH0iqfqwp8IRbzO41PoY2Bc"></script>
+
+        <?php
+        Com_Helper_Script::getInstance()->addFile("Public/jquery.js")
+            ->addFile("Public/bootstrap.min.js")
+            ->addFile("Public/jquery.easing.min.js")
+            ->addFile("Public/imagesloaded.pkgd.min.js")
+            ->addFile("Public/sequence.min.js")
+            ->addFile("Public/sequence-theme.basic.min.js")
+            ->addFile("Public/jquery.flexisel.js")
+            ->addFile("Public/slick.min.js")
+           // ->addFile("Public/moment.js")
+            ->addFile("Public/clndr.js")
+            ->addFile("Public/lightbox.min.js")
+            ->addFile("Public/sweetalert.min.js")
+            ->addFile("Public/hobesound.js");
 
 
-echo Com_Helper_Script::getInstance();
+        echo Com_Helper_Script::getInstance();
 
-?>
+        ?>
 
 <script type="text/javascript" language="Javascript">
-    $(function() {
+
+    $( document ).ready(function() {
+        var thisMonth = moment().format('YYYY-MM');
         <?PHP Calendar_Widget_Events::getInstance()->setLan($this->lan)->setDate("2016/07")->render(); ?>
 
         var clndr1 = $('.cal1').clndr({
@@ -236,6 +239,7 @@ echo Com_Helper_Script::getInstance();
                     $("#event-title").html(target.events[0].title);
                     $("#event-description").html(target.events[0].description);
                     $("#event-url").attr("href",target.events[0].url);
+
                 },
                 today: function () {
                     console.log('Cal-1 today');

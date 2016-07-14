@@ -36,7 +36,7 @@ class Calendar_Widget_Events extends Com_Object
     {
 
         $list = Calendar_Model_Calendar::getInstance()->getListByDate($this->lan->LanId, $this->date);
-        echo sprintf("var eventArray = [");
+        echo sprintf("eventArray = [");
       
         $count = 0;
         foreach ($list as $item) {

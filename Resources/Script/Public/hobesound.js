@@ -18,20 +18,14 @@ $(document).ready(collapseNavbar);
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-    $( ".site-header" ).hover(
-        function() {
-            toggleMenu();
-        }, function() {
-            toggleMenu();
-        }
-    );
+    //$('a.page-scroll').bind('click', function(event) {
+    //    var $anchor = $(this);
+    //    $('html, body').stop().animate({
+    //        scrollTop: $($anchor.attr('href')).offset().top
+    //    }, 1500, 'easeInOutExpo');
+    //    event.preventDefault();
+    //});
+
     $(".site-header .header-toggle").on("click", function (e) {
         e.preventDefault();
 
@@ -46,14 +40,10 @@ $(function() {
         }
     });
 
-
     initSports();
     initHsp();
     initNews();
     initFs();
-    toggleSportOverlay();
-    initNews();
-    initSlideNews();
 });
 
 // Closes the Responsive Menu on Menu Item Click
@@ -230,7 +220,7 @@ function initNews() {
 function validarEmail(email) {
     expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!expr.test(email)) {
-        swal("Error", "The mailing address is incorrect", "error");
+        swal("Error", "La dirección de correo '" + email + "' es incorrecta", "error");
         return false;
     } else
         return true;
@@ -243,11 +233,11 @@ function saveContact(errorMesage, Message, lanId) {
     var mensaje = $('#contacto-mensaje').val();
 
     if (nombre === "" || email === "" || mensaje === "") {
-        swal("Alert!!", "All fields are required", "warning");
+        swal("Alerta!!", "Todos los campos marcados son obligatorios", "warning");
     } else {
 
         if (validarEmail(email)) {
-            swal("Received", "Thank you for writing, we will respond shortly.", "success");
+            swal("Exito", "Ya resivimso su mensaje, en breve le responderemos", "success");
             $.ajax({
                 type: "POST",
                 url: urlBase + "/Service/Contact/Save",
@@ -256,71 +246,16 @@ function saveContact(errorMesage, Message, lanId) {
             $('#contacto-nombre').val("");
             $('#contacto-email').val("");
             $('#contacto-mensaje').val("");
-        } 
+        } else {
+            alert('mal email');
+        }
 
 
     }
 }
 
-function toggleMenu(){
-    $( ".header-menu nav" ).animate({
-        height: "toggle"
-    }, 300, function() {
-        // Animation complete.
-    });
-}
+function initMenu(){
+    /*-- MOBILE MENU --*/
 
-function toggleSportOverlay()
-{
-    $( "#sports li a,#tournaments li a" ).hover(
-        function(e) {
-            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
-            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
-        }, function(e) {
-            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
-            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
-        }
-    );
-}
-
-function initSlideNews() {
-    $('#news .nav-news').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    arrows: false
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false
-                }
-            }
-        ]
-    });
-
-    $("#news .nav-news .mas").click(function () {
-        $("#news .item-news").removeClass("active");
-        $("#news .item-news[rel='" + $(this).attr("rel") + "']").addClass("active");
-    });
+    /*-- MOBILE MENU --*/
 }
