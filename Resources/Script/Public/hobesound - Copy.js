@@ -23,25 +23,12 @@ $(function() {
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1500, 'easeInOutExpo');
-
-        var this_target = $("body"),
-            this_menu = $(this).siblings(".header-menu");
-
-        if (this_target.hasClass("active")) {
-            this_target.removeClass("active");
-            this_menu.find("*").removeAttr("style").removeClass("active");
-            $( ".header-menu nav").css('display', 'none');
-        }
-
         event.preventDefault();
-
     });
     $( ".site-header" ).hover(
         function() {
             toggleMenu();
-            //$( ".header-menu nav").css('display', 'block');
         }, function() {
-            //$( ".header-menu nav").css('display', 'block');
             toggleMenu();
         }
     );
@@ -55,10 +42,10 @@ $(function() {
         if (this_target.hasClass("active")) {
             this_target.removeClass("active");
             this_menu.find("*").removeAttr("style").removeClass("active");
-            $( ".header-menu nav").css('display', 'none');
+            toggleMenu();
         } else {
             this_target.addClass("active");
-            $( ".header-menu nav").css('display', 'block');
+            toggleMenu();
         }
     });
 
@@ -66,7 +53,8 @@ $(function() {
     initHsp();
     initNews();
     initFs();
-    toggleSportOverlay();
+     toggleSportOverlay();
+    initNews();
     initSlideNews();
 });
 
@@ -305,15 +293,12 @@ function saveContact(errorMesage, Message, lanId) {
     }
 }
 
-
 function toggleMenu(){
-    //if ($(window).width() > 480 || $(window).height() > 480) {
-        $( ".header-menu nav" ).animate({
-            height: "toggle"
-        }, 300, function() {
-            // Animation complete.
-        });
-    //}
+    $( ".header-menu nav" ).animate({
+        height: "toggle"
+    }, 300, function() {
+        // Animation complete.
+    });
 }
 
 function toggleSportOverlay()

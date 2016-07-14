@@ -221,13 +221,11 @@
 
 
         echo Com_Helper_Script::getInstance();
-
         ?>
 
 <script type="text/javascript" language="Javascript">
 
     $( document ).ready(function() {
-        var thisMonth = moment().format('YYYY-MM');
         <?PHP Calendar_Widget_Events::getInstance()->setLan($this->lan)->setDate("2016/07")->render(); ?>
 
         var clndr1 = $('.cal1').clndr({

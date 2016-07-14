@@ -32,6 +32,7 @@ class Menu_Widget_Menu extends Com_Object {
 
         $list = Menu_Model_Menu::getInstance()->getMenuList($this->lan->LanId, $this->parent);
         $actualUrl = Com_Helper_Url::getInstance()->urlBase . '/' . get("QUERY_STRING");
+
         ?>
 
         <?PHP
@@ -43,7 +44,11 @@ class Menu_Widget_Menu extends Com_Object {
             }
             ?>
 
-            <li class="menu-item menu-item-type-post_type menu-item-object-page "><a class="page-scroll" href="<?PHP echo $item->MenUrl; ?>"><?PHP echo $item->MenAlias; ?></a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                <a class="page-scroll" href="<?PHP echo $item->MenUrl; ?>">
+                    <?PHP echo $item->MenAlias; ?>
+                </a>
+            </li>
 
             <?PHP
         }
