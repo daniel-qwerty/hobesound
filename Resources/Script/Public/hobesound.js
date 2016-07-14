@@ -44,6 +44,9 @@ $(function() {
     initHsp();
     initNews();
     initFs();
+     toggleSportOverlay();
+    initNews();
+    initSlideNews();
 });
 
 // Closes the Responsive Menu on Menu Item Click
@@ -254,8 +257,67 @@ function saveContact(errorMesage, Message, lanId) {
     }
 }
 
-function initMenu(){
-    /*-- MOBILE MENU --*/
+function toggleMenu(){
+    $( ".header-menu nav" ).animate({
+        height: "toggle"
+    }, 300, function() {
+        // Animation complete.
+    });
+}
 
-    /*-- MOBILE MENU --*/
+function toggleSportOverlay()
+{
+    $( "#sports li a,#tournaments li a" ).hover(
+        function(e) {
+            console.log(e.currentTarget.rel);
+            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
+            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'block');
+        }, function(e) {
+            console.log(e.currentTarget.rel);
+            $( '#sports li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
+            $( '#tournaments li a[rel="' + e.currentTarget.rel + '"] .title-overlay').css('display', 'none');
+        }
+    );
+}
+
+function initSlideNews() {
+    $('#news .nav-news').slick({
+        dots: false,
+        infinite: true,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    $("#news .nav-news .mas").click(function () {
+        $("#news .item-news").removeClass("active");
+        $("#news .item-news[rel='" + $(this).attr("rel") + "']").addClass("active");
+    });
 }
