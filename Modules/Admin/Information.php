@@ -46,7 +46,7 @@ class Admin_Information extends Com_Module_Information {
         Com_Helper_Panel::getInstance()->add("bookmark", "Preserv", "/Admin/Preserv");
         Com_Helper_Panel::getInstance()->add("file", "Noticias", "/Admin/News");
         Com_Helper_Panel::getInstance()->add("inbox", "Contacto", "/Admin/Contact");
-        Com_Helper_Panel::getInstance()->add("flash", "Sport", "/Admin/Sport");
+        Com_Helper_Panel::getInstance()->add("flash", "Sport", "/Admin/Sports");
         
     }
 
