@@ -12,27 +12,19 @@ class Contact_Controller_Service extends Com_Module_Controller_Json {
     }
 
     private function sendEmail($emailClient, $nameClient, $messageClient) {
-        $email = new Com_Wizard_Mail();
-        $strTitle = strtoupper("Nuevo Registro de Contacto");
-        $strLogo = Com_Helper_Url::getInstance()->getImage() . "/Public/logo.jpg";
-        $email->setSubject($strTitle);
-        $email->setFrom(EMAIL_USERNAME, EMAIL_FROM);
-        $strMessage = file_get_contents(Com_Helper_Url::getInstance()->physicalDirectory . "/Resources/Layouts/email/contact.phtml");
-        $strMessage = str_replace("{Logo}", $strLogo, $strMessage);
-        $strMessage = str_replace("{Title}", $strTitle, $strMessage);
-        $strMessage = str_replace("{Contact.Date}", date("d/m/Y H:i:s"), $strMessage);
-        $strMessage = str_replace("{Contact.Name}", $nameClient, $strMessage);
-        $strMessage = str_replace("{Contact.Email}", $emailClient, $strMessage);
-        $strMessage = str_replace("{Contact.Content}", $messageClient, $strMessage);
-        $strMessage = str_replace("{Footer}", "", $strMessage);
 
-        $list = Configurations_Helper_Configuration::getInstance()->getKey("EMAIL_CONTACT");
-        $list = explode(",", $list);
-        foreach ($list as $obj) {
-            $email->addAddress($obj, $obj);
-        }
-        $email->setMessage($strMessage);
-        $email->send();
+        $to = EMAIL_USERNAME;
+        $subject = 'CONTACT FROM WEB';
+        $message = '<html><body>';
+        $message .= '<h3>NAME: </h3>'.$nameClient.'<br> <h3>MESSAGE: </h3>'.$messageClient;
+        $message .= '</body></html>';
+        $headers = 'From:'.$emailClient . "\r\n" .
+                'Reply-To:'.$emailClient. "\r\n" .
+                'Content-Type: text/html; charset=ISO-8859-1\r\n';
+                'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
+
     }
 
 }
