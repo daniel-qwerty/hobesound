@@ -10,11 +10,18 @@
         <link rel="shortcut icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" type="image/x-icon"/>
         <link rel="icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" type="image/x-icon"/>
 
-        <meta property="og:title" content="<?PHP echo $this->page->PagName; ?>">
-        <meta property="og:description" content="<?PHP echo $this->page->PagDescription; ?>">
-        <meta property="og:url" content="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/' . $this->page->PagUrl); ?>">
-        <meta property="og:image" content="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->page->PagImage; ?>">
-        <meta property="og:site_name" content="<?PHP echo $this->translator->pageTitle; ?>">
+      <!-- Facebook -->
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:url"
+              content="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/index.html'); ?>">
+        <meta property="og:title" content="Sports Hobe Sound">
+        <meta property="og:site_name" content="Hobe Sound Equestrian Farms">
+        <meta property="og:description" content="If you are planning to buy land in Hobe Sound to build the farm of your dreams, we have a selection of the best plots currently available in some of the most sought after areas of the coast, and also at a very competitive price.">
+        <meta property="og:image"
+              content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/about-us.jpg">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="80">
+        <meta property="og:image:height" content="80">
         <meta property="og:type" content="website">
 
         <?PHP

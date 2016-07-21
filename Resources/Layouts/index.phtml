@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Neblux - La manera más inteligente de usar el Transporte Público">
-    <meta name="author" content="Neblux">
+    <meta name="description" content="If you are planning to buy land in Hobe Sound to build the farm of your dreams, we have a selection of the best plots currently available in some of the most sought after areas of the coast, and also at a very competitive price.">
+    <meta name="author" content="Hode Sound Equestrian Farms">
     <meta name="robots" content="index,follow">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Neblux - La manera más inteligente de usar el Transporte Público">
+    <meta name="apple-mobile-web-app-title" content="Hode Sound Equestrian Farms">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="#db5945">
     <title><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titlePage')->TxtDescription; ?></title>
@@ -19,12 +19,12 @@
     <!-- Facebook -->
     <meta property="og:locale" content="en_GB">
     <meta property="og:url"
-          content="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/' . $this->page->PagUrl); ?>">
-    <meta property="og:title" content="<?PHP echo $this->page->PagName; ?>">
-    <meta property="og:site_name" content="<?PHP echo $this->translator->pageTitle; ?>">
-    <meta property="og:description" content="<?PHP echo $this->page->PagDescription; ?>">
+          content="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, 'page/index.html/'); ?>">
+    <meta property="og:title" content="Hode Sound Equestrian Farms">
+    <meta property="og:site_name" content="Hobe Sound Equestrian Farms">
+    <meta property="og:description" content="If you are planning to buy land in Hobe Sound to build the farm of your dreams, we have a selection of the best plots currently available in some of the most sought after areas of the coast, and also at a very competitive price.">
     <meta property="og:image"
-          content="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->page->PagImage; ?>">
+              content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/about-us.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="80">
     <meta property="og:image:height" content="80">
@@ -246,18 +246,32 @@
     <div class="row">
         <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleLifeStyle')->TxtDescription; ?></h2>
 
+<<<<<<< HEAD
         <div class="col-md-4 ls-shopping">
             <img class="img-responsive"
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic_shopping.png" alt=""/>
+=======
+        <div class="col-md-4  ls-shopping">
+            <div class="ls-header">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic-shoping-2.png" alt=""/>
+>>>>>>> baa91baa03ae682448657aab7e699b79e57b1182
 
             <h2 class="text-red">Shopping</h2>
             <ul class="fs-scroll">
                 <?PHP Life_Widget_List::getInstance()->setLan($this->lan)->setCategory("Shopping")->render(); ?>
             </ul>
         </div>
+<<<<<<< HEAD
         <div class="col-md-4 ls-beach">
             <img class="img-responsive"
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic_beach.png" alt=""/>
+=======
+        <div class="col-md-4  ls-beach">
+            <div class="ls-header">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic-beach-2.png" alt=""/>
+>>>>>>> baa91baa03ae682448657aab7e699b79e57b1182
 
             <h2 class="text-red">Beach</h2>
             <ul class="fs-scroll">
@@ -265,8 +279,14 @@
             </ul>
         </div>
         <div class="col-md-4 ls-restaurant">
+<<<<<<< HEAD
             <img class="img-responsive"
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic_restaurant.png" alt=""/>
+=======
+            <div class="ls-header">
+                <img class="img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ic-restaurant-2.png" alt=""/>
+>>>>>>> baa91baa03ae682448657aab7e699b79e57b1182
 
             <h2 class="text-red">Restaurants</h2>
             <ul class="fs-scroll">

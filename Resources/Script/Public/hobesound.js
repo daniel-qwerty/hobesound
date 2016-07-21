@@ -271,7 +271,7 @@ function initNews() {
 function validarEmail(email) {
     expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!expr.test(email)) {
-        swal("Error", "La dirección de correo '" + email + "' es incorrecta", "error");
+        swal("Error", "The mailing address is incorrect", "error");
         return false;
     } else
         return true;
@@ -284,11 +284,11 @@ function saveContact(errorMesage, Message, lanId) {
     var mensaje = $('#contacto-mensaje').val();
 
     if (nombre === "" || email === "" || mensaje === "") {
-        swal("Alerta!!", "Todos los campos marcados son obligatorios", "warning");
+        swal("Alert!!", "All fields are required", "warning");
     } else {
 
         if (validarEmail(email)) {
-            swal("Exito", "Ya resivimso su mensaje, en breve le responderemos", "success");
+            swal("Received", "Thank you for writing, we will respond shortly.", "success");
             $.ajax({
                 type: "POST",
                 url: urlBase + "/Service/Contact/Save",
@@ -297,14 +297,11 @@ function saveContact(errorMesage, Message, lanId) {
             $('#contacto-nombre').val("");
             $('#contacto-email').val("");
             $('#contacto-mensaje').val("");
-        } else {
-            alert('mal email');
-        }
+        } 
 
 
     }
 }
-
 
 function toggleMenu(){
     //if ($(window).width() > 480 || $(window).height() > 480) {

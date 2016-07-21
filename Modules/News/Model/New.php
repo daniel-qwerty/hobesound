@@ -24,7 +24,6 @@ class News_Model_New extends Com_Module_Model {
             $db->NewContent = $obj->Content;
             $db->NewDate = $obj->Date;
             $db->NewUrl = generateUrl($obj->Title);
-            $db->NewMetaTags = $obj->MetaTags;
             $db->NewDescription = $obj->Description;
             $db->NewAuthor = $obj->Author;
             $db->NewImage = $imageFile;
@@ -48,7 +47,6 @@ class News_Model_New extends Com_Module_Model {
         $db->NewContent = $obj->Content;
         $db->NewDate = $obj->Date;
         $db->NewUrl = generateUrl($obj->Title);
-        $db->NewMetaTags = $obj->MetaTags;
         $db->NewDescription = $obj->Description;
         $db->NewAuthor = $obj->Author;
         if ($imageFile != "") {

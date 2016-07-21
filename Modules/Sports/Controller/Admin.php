@@ -1,4 +1,4 @@
-s<?PHP
+<?PHP
 
 class Sports_Controller_Admin extends Admin_Controller_Admin {
 
