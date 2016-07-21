@@ -11,15 +11,15 @@ class Public_Controller_Index extends Com_Module_Controller_Language {
         $this->lan = Language_Model_Language::getInstance()->getByCode($this->language);
         $fileDir = Com_Helper_Url::getInstance()->physicalDirectory . '/Languages/' . $this->lan->LanCode . ".language";
 
-        /*if (!(file_exists($fileDir))) {
-            $this->redirect(Com_Helper_Url::getInstance()->generateUrl("es", "error"));
-            exit;
-        }*/
-        /*
-        if($this->lan->LanCode!="es"){
-            $this->redirect(Com_Helper_Url::getInstance()->generateUrl("es", "error"));
-            exit;
-        }*/
+//        if (!(file_exists($fileDir))) {
+//            $this->redirect(Com_Helper_Url::getInstance()->generateUrl("es", "error"));
+//            exit;
+//        }
+//
+//        if($this->lan->LanCode!="es"){
+//            $this->redirect(Com_Helper_Url::getInstance()->generateUrl("es", "error"));
+//            exit;
+//        }
 
         $this->translator = json_decode(file_get_contents($fileDir));
 
