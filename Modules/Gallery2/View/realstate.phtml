@@ -36,7 +36,7 @@
 
 
 <section id="gallery" class="container-fluid content-section text-center">
-    <h2 class="text-red text-center color-5">Gallery</h2>
+    <h2 class="text-red text-center color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleGallery')->TxtDescription; ?></h2>
     <div class="row">
          <?PHP Gallery2_Widget_Gallery::getInstance()->setLan($this->lan)->setLimit(12)->render(); ?>
     </div>

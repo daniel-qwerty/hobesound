@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Script/Public/hobesound.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Style/Public/hobesound.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Life/Widget/List.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Configuration.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Configuration_.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Contact/Controller/Service.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Layouts/index.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Script/Public/hobesound%20-%20Copy.js</file>
+        </group>
     </open-files>
 </project-private>

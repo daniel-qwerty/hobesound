@@ -8,7 +8,6 @@
                             <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat($this->sport->SpoTitle)->render(); ?>
                         </ul>
                     </div>
-
                     <ul rel="sequence" class="seq-pagination" role="navigation" aria-label="Pagination">
                         <?PHP SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->setCat($this->sport->SpoTitle)->renderPag(); ?>
                     </ul>
@@ -40,9 +39,8 @@
 <?PHP Sports_Widget_Banner::getInstance()->setLan($this->lan)->setLimit($this->sport->SpoTitle)->render(); ?>
 
 <section id="calendar" class="container content-section">
-
     <div class="container">
-        <h2 class="text-red text-center color-2">Calendar</h2>
+        <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleCalendar')->TxtDescription; ?></h2>
 
         <div class="row bg-white">
             <div class="col-lg-6 p-content bg-color-5">
@@ -72,8 +70,7 @@
 <section id="tournaments" class="content-section">
     <div class="container-fluid">
         <div class="row">
-            <h2 class="text-red text-center color-5">Tournaments</h2>
-
+            <h2 class="text-red text-center color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleTournaments')->TxtDescription; ?></h2>
             <div class="col-sm-10 col-md-offset-1">
                 <ul id="sports-scroll">
                     <?PHP Sports_Widget_Gallery::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
@@ -96,7 +93,7 @@
 </section>
 
 <section id="gallery" class="container-fluid content-section text-center">
-    <h2 class="text-red text-center color-5">Gallery</h2>
+    <h2 class="text-red text-center color-5"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleGallery')->TxtDescription; ?></h2>
 
     <div class="row">
         <?PHP Sports_Widget_Galleries::getInstance()->setSpoId($this->sport->SpoId)->setLan($this->lan)->render(); ?>

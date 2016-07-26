@@ -2,7 +2,7 @@
 
 class Entities_Menu extends Com_Database_Entity_Language {
 
-    public $tableName = "Menu";
+    public $tableName = "menu";
     public $keyField = "MenId";
     public $lanField = "MenLanId";
     public $MenId;
@@ -19,6 +19,7 @@ class Entities_Menu extends Com_Database_Entity_Language {
     public $MenY;
     public $MenW;
     public $MenH;
+    public $MenClass;
 
     public function getMenuList() {
         return Com_Database_Query::getInstance()->select()

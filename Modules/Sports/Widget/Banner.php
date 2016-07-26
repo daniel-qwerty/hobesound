@@ -36,9 +36,9 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
+                    <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
 
-                    <h3 class="text-red text-center color-2">For more information contact us</h3>
+                    <h3 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
 
                     <div class="row bg-white">
                         <div class="col-md-4 p-content bg-color-5 text-center">
@@ -66,9 +66,9 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
+                   <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
 
-                    <h3 class="text-red text-center color-2">For more information contact us</h3>
+                    <h3 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
 
                     <div class="row bg-white">
                         <div class="col-md-4 p-content bg-color-5 text-center">
@@ -95,9 +95,9 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2">SEASON OPEN ON JANUARY 2017</h2>
+                    <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
 
-                    <h3 class="text-red text-center color-2">For more information contact us</h3>
+                    <h3 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
 
                     <div class="row bg-white">
                         <div class="col-lg-12 p-content bg-color-5 text-center">

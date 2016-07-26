@@ -31,6 +31,7 @@ class Menu_Model_Menu extends Com_Module_Model {
             $db->MenY = $obj->Y;
             $db->MenW = $obj->W;
             $db->MenH = $obj->H;
+            $db->MenClass = "";
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -56,6 +57,7 @@ class Menu_Model_Menu extends Com_Module_Model {
         $db->MenY = $obj->Y;
         $db->MenW = $obj->W;
         $db->MenH = $obj->H;
+        $db->MenClass = "";
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
