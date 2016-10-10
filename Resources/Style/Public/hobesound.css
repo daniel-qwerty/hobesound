@@ -7,7 +7,7 @@
 body {
     width: 100%;
     height: 100%;
-    font-family: Arial, Lora, "Helvetica Neue", Helvetica,  sans-serif;
+    font-family: Arial, Lora, "Helvetica Neue", Helvetica, sans-serif;
     color: #000000;
     background-color: #FFFFFF;
 }
@@ -72,6 +72,7 @@ p {
 .color-9 {
     color: #7e0a0c !important;
 }
+
 .color-10 {
     color: #024534 !important;
 }
@@ -115,7 +116,8 @@ p {
 .bg-color-10 {
     background: #024534 !important;
 }
-.bg-color-11{
+
+.bg-color-11 {
     background: #e8e8ea !important;
 }
 
@@ -303,14 +305,14 @@ ul {
 }
 
 /*.site-header .header-menu nav > ul > li:before {*/
-    /*content: "";*/
-    /*display: block;*/
-    /*width: 30px;*/
-    /*height: 30px;*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*z-index: -1;*/
-    /*background-color: #004216;*/
+/*content: "";*/
+/*display: block;*/
+/*width: 30px;*/
+/*height: 30px;*/
+/*position: absolute;*/
+/*top: 0;*/
+/*z-index: -1;*/
+/*background-color: #004216;*/
 /*}*/
 
 .site-header .header-menu nav > ul > li:hover > a,
@@ -383,6 +385,21 @@ ul {
 
 .site-header .header-logo {
     padding-bottom: 5px
+}
+
+.site-header div.header-menu {
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -ms-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+}
+
+.site-header:hover div.header-menu {
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .intro {
@@ -506,8 +523,6 @@ ul {
     /*margin-top: 100px;*/
 }
 
-
-
 #map {
     width: 100%;
     height: 200px;
@@ -562,8 +577,7 @@ ul.banner-social-buttons {
     }
 }
 
-
-#about{
+#about {
     padding: 20px 20px;
 }
 
@@ -589,17 +603,28 @@ ul.banner-social-buttons {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     vertical-align: middle;
     text-align: center;
 }
-#sports li a .title-overlay p{
+
+#sports li a .title-overlay p {
     position: absolute;
     top: 50%;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
     font-size: large;
+}
+
+#sports li a .title-overlay small {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    transform: translate(0, -100%);
+    left: 0;
 }
 
 #real-state .p-content {
@@ -643,6 +668,7 @@ ul.banner-social-buttons {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
 #news .news-items p {
     padding: 0 10px;
     color: #000000;
@@ -667,15 +693,14 @@ ul.banner-social-buttons {
     width: 100%;
     height: 190px;
     object-fit: fill;
-    
-    
+
 }
 
 .hsp-items {
     margin-bottom: 15px;
 }
 
-.hsp-items .p-content{
+.hsp-items .p-content {
     height: 350px;
     overflow-x: auto;
     padding: 30px;
@@ -705,29 +730,34 @@ div.hsp-item {
     display: block;
     font-size: 20px;
 }
-#life-style .ls-shopping{
+
+#life-style .ls-shopping {
     background: #9ac667;
     padding: 0;
 }
+
 #life-style .ls-shopping .fs-scroll a:hover {
     /*color: #ca2f3c !important;*/
     font-size: 22px !important;
     background: #62823c;
 }
-#life-style .ls-beach{
+
+#life-style .ls-beach {
     background: #edab31;
     padding: 0;
 }
+
 #life-style .ls-beach .fs-scroll a:hover {
     /*color: #ffe261 !important;*/
     font-size: 22px !important;
     background: #e08d2b;
 }
 
-#life-style .ls-restaurant{
+#life-style .ls-restaurant {
     background: #c1282d;
     padding: 0;
 }
+
 #life-style .ls-restaurant .fs-scroll a:hover {
     /*color: #99e4cd !important;*/
     font-size: 22px !important;
@@ -781,7 +811,8 @@ div.hsp-item {
     margin: 0;
     padding: 15px 0;
 }
-#contact ul{
+
+#contact ul {
     margin: 65px 0;
 }
 
@@ -827,7 +858,6 @@ div.hsp-item {
     background-repeat: repeat-x;
 }
 
-
 #tournaments li a {
     display: block;
     position: relative;
@@ -840,17 +870,28 @@ div.hsp-item {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     vertical-align: middle;
     text-align: center;
 }
-#tournaments li a .title-overlay p{
+
+#tournaments li a .title-overlay p {
     position: absolute;
     top: 50%;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
     font-size: large;
+}
+
+#tournaments li a .title-overlay small {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    transform: translate(0, -100%);
+    left: 0;
 }
 
 #gallery {
@@ -895,9 +936,10 @@ div.hsp-item {
 }
 
 #news .p-image img {
-        width: 100%;
+    width: 100%;
     height: 330px;
     object-fit: none;
+    object-position: top;
     -webkit-object-fit: none;
 }
 
@@ -912,10 +954,12 @@ div.hsp-item {
 #news .item-news .col-lg-12 {
     padding: 15px;
 }
-#news .nav-news{
+
+#news .nav-news {
     padding: 15px 0;
     background: #ac8b3c;
 }
+
 #news .nav-news h2 {
     margin-bottom: 0;
     font-size: 20px;
@@ -950,7 +994,6 @@ div.hsp-item {
 #news .nav-news p {
     margin-bottom: 5px;
 }
-
 
 #news .p-content-2 {
     text-align: justify;
@@ -1051,9 +1094,10 @@ body {
 }
 
 @media (max-width: 767px) {
-    h2{
+    h2 {
         font-size: 22px;
     }
+
     ul.banner-social-buttons li {
         display: block;
         margin-bottom: 20px;
@@ -1063,14 +1107,17 @@ body {
     ul.banner-social-buttons li:last-child {
         margin-bottom: 0;
     }
+
     .hsp-items .p-content:first-child {
         height: 300px;
         overflow-x: auto;
         padding: 40px;
     }
+
     .hsp-items .p-content:last-child {
         height: 200px;
     }
+
     #news h2 {
         margin: 30px 10px;
     }
@@ -1110,6 +1157,11 @@ body {
         top: 50%;
         left: 0;
         margin-top: -20px;
+    }
+
+    .site-header div.header-menu {
+        max-height: 600px;
+        overflow: hidden;
     }
 
     .site-left {

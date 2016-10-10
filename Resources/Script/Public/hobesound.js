@@ -36,15 +36,15 @@ $(function() {
         event.preventDefault();
 
     });
-    $( ".site-header" ).hover(
-        function() {
-            toggleMenu();
-            //$( ".header-menu nav").css('display', 'block');
-        }, function() {
-            //$( ".header-menu nav").css('display', 'block');
-            toggleMenu();
-        }
-    );
+    //$( ".site-header" ).hover(
+    //    function() {
+    //        toggleMenu();
+    //        //$( ".header-menu nav").css('display', 'block');
+    //    }, function() {
+    //        //$( ".header-menu nav").css('display', 'block');
+    //        toggleMenu();
+    //    }
+    //);
 
     $(".site-header .header-toggle").on("click", function (e) {
         e.preventDefault();
