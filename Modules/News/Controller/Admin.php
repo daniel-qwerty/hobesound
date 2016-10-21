@@ -39,6 +39,7 @@ class News_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Author');
         $this->assign('Image');
         $this->assign('Status');
+        $this->assign('Sport');
         $this->assign('Important');
         $this->assign("languages", $languages);
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
@@ -77,7 +78,7 @@ class News_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('MetaTags', $entity->NewMetaTags);
         $this->assign('Description', $entity->NewDescription);
         $this->assign('Author', $entity->NewAuthor);
-
+        $this->assign('Sport', $entity->NewSpoId);
         $this->assign('Image', $entity->NewImage);
         $this->assign('Status', $entity->NewStatus);
         $this->assign('Important', $entity->NewImportant);
