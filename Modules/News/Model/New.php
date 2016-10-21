@@ -29,6 +29,7 @@ class News_Model_New extends Com_Module_Model {
             $db->NewImage = $imageFile;
             $db->NewStatus = $obj->Status;
             $db->NewImportant = $obj->Important;
+            $db->NewSpoId = $obj->Sport;
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -49,6 +50,7 @@ class News_Model_New extends Com_Module_Model {
         $db->NewUrl = generateUrl($obj->Title);
         $db->NewDescription = $obj->Description;
         $db->NewAuthor = $obj->Author;
+        $db->NewSpoId = $obj->Sport;
         if ($imageFile != "") {
             $db->NewImage = $imageFile;
         }
@@ -86,6 +88,11 @@ class News_Model_New extends Com_Module_Model {
     public function getList($lanId, $limit = 1000, $category) {
         $text = new Entities_New();
         return $text->getAll($text->getList()->where("NewLanId={$lanId} and NewStatus = 1 and NewCatId='{$category}'")->orderBy("NewDate desc")->limit(0, $limit));
+    }
+    
+    public function getListSport($lanId, $limit = 1000, $category) {
+        $text = new Entities_New();
+        return $text->getAll($text->getList()->where("NewLanId={$lanId} and NewStatus = 1 and NewSpoId='{$category}'")->orderBy("NewDate desc")->limit(0, $limit));
     }
     
     public function getImportant($lanId, $limit = 1000) {

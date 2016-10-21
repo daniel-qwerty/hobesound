@@ -31,6 +31,16 @@ foreach ($this->Category as $type) {
 }
 $form->add($control);
 
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Sport";
+$control->label = "Sport";
+$control->default = $this->Sport;
+$control->required = true;
+foreach ($this->Sport as $type) {
+    $control->addItem($type->SpoId, $type->SpoName);
+}
+$form->add($control);
+
 $control = new Com_Wizard_Form_Control();
 $control->name = "Title";
 $control->label = "Titulo";

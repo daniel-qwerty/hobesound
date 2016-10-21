@@ -22,5 +22,6 @@ class Entities_New extends Com_Database_Entity_Language {
     public $NewTwitter;
     public $NewGoogle;
     public $NewImportant;
+    public $NewSpoId;
 
 }
