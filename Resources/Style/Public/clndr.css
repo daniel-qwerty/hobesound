@@ -91,7 +91,7 @@ html[xmlns] .clearfix {
 .cal1 .clndr .clndr-controls .clndr-control-button {
     float: left;
     width: 33%;
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 .cal1 .clndr .clndr-controls .clndr-control-button.rightalign {
