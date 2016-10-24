@@ -25,7 +25,6 @@ $control->name = "Category";
 $control->label = "Categoria";
 $control->default = $this->Category;
 $control->required = true;
-
 foreach ($this->Category as $type) {
     $control->addItem($type->CatId, $type->CatName);
 }
@@ -37,7 +36,7 @@ $control->label = "Sport";
 $control->default = $this->Sport;
 $control->required = true;
 foreach ($this->Sport as $type) {
-    $control->addItem($type->SpoId, $type->SpoName);
+    $control->addItem($type->SpoId, $type->SpoTitle);
 }
 $form->add($control);
 

@@ -237,7 +237,7 @@ echo Com_Helper_Script::getInstance();
         <?PHP
         $cal = Calendar_Widget_Events::getInstance();
         $cal->setLan($this->lan);
-       
+        //$cal->setDate("2017/01");
         $cal->render();
         ?>
 
@@ -246,7 +246,7 @@ echo Com_Helper_Script::getInstance();
             clickEvents: {
                 click: function (target) {
                     //console.log('Cal-1 clicked: ', target);
-                    console.log(target.events[0])
+                    console.log(target.events[0]);
                     $("#event-title").html(target.events[0].title);
                     $("#event-description").html(target.events[0].description);
                     $("#event-url").attr("href", target.events[0].url);

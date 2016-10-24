@@ -45,6 +45,7 @@ class News_Controller_Admin extends Admin_Controller_Admin {
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
         
         $this->assign('Category', Category_Model_Category::getInstance()->getList());
+        $this->assign('Sport', Sports_Model_Sport::getInstance()->getList(7,100));
         
     }
 
@@ -85,7 +86,7 @@ class News_Controller_Admin extends Admin_Controller_Admin {
         $this->assign("languages", $languages);
         
         $this->assign('Category', Category_Model_Category::getInstance()->getList());
-        
+        $this->assign('Sport', Sports_Model_Sport::getInstance()->getList(7,100));
         
     }
 
