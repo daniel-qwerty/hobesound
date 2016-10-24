@@ -1,7 +1,6 @@
 <?php
 
-class Sports_Widget_Banner extends Com_Object
-{
+class Sports_Widget_Banner extends Com_Object {
 
     private $lan;
     private $limit;
@@ -10,25 +9,21 @@ class Sports_Widget_Banner extends Com_Object
      *
      * @return Sports_Widget_Banner
      */
-    public static function getInstance()
-    {
+    public static function getInstance() {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan)
-    {
+    public function setLan($lan) {
         $this->lan = $lan;
         return $this;
     }
 
-    public function setLimit($limit)
-    {
+    public function setLimit($limit) {
         $this->limit = $limit;
         return $this;
     }
 
-    public function render()
-    {
+    public function render() {
 
 
         if ($this->limit == 'POLO') {
@@ -36,9 +31,22 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                    <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
+                    <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeasonPolo')->TxtDescription; ?></h2>
+                    <div class="col-md-6 p-content text-center">
+                        <h3>PRACTICES:</h3>
+                        MONTH: $1.500/ PLAYER </br>    
+                        3 PRACTICE/WEEK </br> 
 
-                    <h3 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
+                    </div>
+                    <div class="col-md-6 p-content text-center">
+                        <h3>TOURNAMENTS:</h3>
+                        4 – 6  GOAL   $ 2,000/ TEAM </br> 
+                        8 GOAL    $ 3.500/ TEAM </br> 
+
+                    </div>
+
+
+                    <h3 class="text-red text-center color-2 hidden"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
 
                     <div class="row bg-white">
                         <div class="col-md-4 p-content bg-color-5 text-center">
@@ -54,11 +62,21 @@ class Sports_Widget_Banner extends Com_Object
                                     src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/ipc.jpg"></a>
                         </div>
                     </div>
+                    <div class="row"><div class="col-md-12 p-content text-center">
+                            <img class="img-responsive" style="
+                                 max-width: 550px;
+                                 margin: auto;
+                                 "
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/schedule.jpg"></a>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </section>
 
-        <?php
+            <?php
         }
 
         if ($this->limit == 'JUMPING') {
@@ -66,7 +84,7 @@ class Sports_Widget_Banner extends Com_Object
             <section id="season" class="container content-section">
 
                 <div class="container">
-                   <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
+                    <h2 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleSeason')->TxtDescription; ?></h2>
 
                     <h3 class="text-red text-center color-2"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'subTitleSeason')->TxtDescription; ?></h3>
 
@@ -88,7 +106,7 @@ class Sports_Widget_Banner extends Com_Object
 
             </section>
 
-        <?php
+            <?php
         }
         if ($this->limit == 'DRESSAGE') {
             ?>
@@ -113,9 +131,8 @@ class Sports_Widget_Banner extends Com_Object
 
             </section>
 
-        <?php
+            <?php
         }
     }
+
 }
-
-
