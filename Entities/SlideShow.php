@@ -12,6 +12,7 @@ class Entities_SlideShow extends Com_Database_Entity_Language {
     public $SliDescription;
     public $SliImage;
     public $SliLink;
+    public $SliUrl;
     public $SliStatus;
 
 }

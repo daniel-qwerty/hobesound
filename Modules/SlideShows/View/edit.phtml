@@ -46,8 +46,16 @@ $form->add($control);
 
 $control = new Com_Wizard_Form_Control();
 $control->name = "Link";
-$control->label = "Link Imagen";
+$control->label = "Pagina";
 $control->default = $this->Link;
+$control->length = 50;
+$control->required = false;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Url";
+$control->label = "Link";
+$control->default = $this->Url;
 $control->length = 50;
 $control->required = false;
 $form->add($control);

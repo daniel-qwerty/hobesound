@@ -9,11 +9,18 @@
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/News/View/edit.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/News/Controller/Index.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Sports/View/edit.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/SlideShows/Widget/Slideshow.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/SlideShows/Model/SlideShow.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/SlideShows/View/add.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Layouts/sports.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Sports/Controller/Admin.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/SlideShows/View/edit.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/SlideShows/Controller/Admin.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Entities/SlideShow.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Category/Model/Category.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Sports/View/add.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Sports/Model/Sport.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Layouts/index.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Calendar/Model/Calendar.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Modules/Sports/Widget/Banner.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/hobesound/Resources/Script/Public/clndr.js</file>

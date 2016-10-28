@@ -31,6 +31,7 @@ class SlideShows_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Description');
         $this->assign('Image');
         $this->assign('Link');
+        $this->assign('Url');
         $this->assign('Status');
         $this->assign("languages", $languages);
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
@@ -66,6 +67,7 @@ class SlideShows_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Description', $entity->SliDescription);
         $this->assign('Image', $entity->SliImage);
         $this->assign('Link', $entity->SliLink);
+        $this->assign('Url', $entity->SliUrl);
         $this->assign('Status', $entity->SliStatus);
 
         $this->assign("languages", $languages);

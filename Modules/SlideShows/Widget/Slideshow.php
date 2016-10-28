@@ -4,9 +4,8 @@ class SlideShows_Widget_Slideshow extends Com_Object {
 
     private $lan;
     private $cat;
-    
 
-   /**
+    /**
      *
      * @static
      * @access public
@@ -20,7 +19,7 @@ class SlideShows_Widget_Slideshow extends Com_Object {
         $this->lan = $lan;
         return $this;
     }
-    
+
     public function setCat($cat) {
         $this->category = $cat;
         return $this;
@@ -33,28 +32,38 @@ class SlideShows_Widget_Slideshow extends Com_Object {
         foreach ($list as $slide) {
             $count++;
             ?>
-                <li class="header-step seq-step<?php echo $count;?>" id="step<?php echo $count;?>"
-                    style="background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>) center center / cover">
 
-                </li>
-           
+            <li  class="header-step seq-step<?php echo $count; ?>" id="step<?php echo $count; ?>"
+                 style=" background:linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,0.75)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>) center center / cover">
+                <a href="<?php echo $slide->SliUrl; ?>" target="_self" style="    display: block;
+                   position: absolute;
+                   top: 0;
+                   bottom: 0;
+                   left: 0;
+                   right: 0;" ></a>
+            </li>
+
+
+
             <?PHP
         }
     }
+
     public function renderPag() {
         $list = SlideShows_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId, $this->category);
         $count = 0;
         ?>
-        
-            <?PHP
-            foreach ($list as $slide) {
-                $count++;
-                ?>
-                    <li><a href="#step<?php echo $count;?>" rel="step<?php echo $count;?>" title="Go to slide <?php echo $count;?>"><?PHP echo $slide->SliTitle;?></a></li>
-                <?PHP
-            }
+
+        <?PHP
+        foreach ($list as $slide) {
+            $count++;
             ?>
-       
+            <li><a href="#step<?php echo $count; ?>" rel="step<?php echo $count; ?>" title="Go to slide <?php echo $count; ?>"><?PHP echo $slide->SliTitle; ?></a></li>
+            <?PHP
+        }
+        ?>
+
         <?PHP
     }
+
 }

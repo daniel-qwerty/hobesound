@@ -23,6 +23,7 @@ class SlideShows_Model_SlideShow extends Com_Module_Model {
             $db->SliDescription = $obj->Description;
             $db->SliImage = $image;
             $db->SliLink = $obj->Link;
+            $db->SliUrl = $obj->Url;
             $db->SliStatus = $obj->Status;
             $db->action = ACTION_INSERT;
             $db->save();
@@ -44,7 +45,7 @@ class SlideShows_Model_SlideShow extends Com_Module_Model {
         }
         $db->SliLink = $obj->Link;
         $db->SliStatus = $obj->Status;
-
+        $db->SliUrl = $obj->Url;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
